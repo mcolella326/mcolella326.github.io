@@ -1,0 +1,61 @@
+#-------------------------------
+# Site Settings
+title: Home | Michael Colella
+logo: 
+description: A collection of design and analysis projects by Michael Colella.
+color_scheme: dark 
+
+#-------------------------------
+# Navigation Settings
+menu__settings:
+  menu__items:
+    - title: 'Home'
+      url: '/'
+    - title: 'Projects'
+      url: '/projects/'
+    - title: 'Résumé'
+      url: '/resume/'
+
+#-------------------------------
+# Author Settings
+author:
+  author__name: Michael Colella
+  author__bio: 
+  author__avatar: '/images/01-1.jpg'
+
+social:
+- {icon: "ion-logo-github", link: "https://github.com/mcolella326"}
+- {icon: "ion-logo-linkedin", link: "https://www.linkedin.com/in/michaelcolella/"}
+
+#-------------------------------
+# Hero Settings
+hero:
+  hero__title: Hi! I'm Michael.
+  hero__description: I am a mechanical engineer with more than 3 years of professional experience in structural analysis engineering. Adept in the design and analysis of new and existing structures, including nuclear reactors, airports, high rise commercial office buildings, museums, power plants, and other public facilities. Currently applying finite element and finite volume methods to solve complex structural engineering problems.
+  hero__image: '/images/01.jpg'
+
+#-------------------------------
+# Projects Settings
+projects__settings:
+  projects__title: Projects 
+  projects__description: 
+
+#-------------------------------
+# Footer Navigation Settings
+footer_menu__settings:
+  menu__items:
+    - title: 'Home'
+      url: '/'
+    - title: 'Projects'
+      url: '/projects/'
+    - title: 'Résumé'
+      url: '/resume/'
+
+#-------------------------------
+# Comment Section (Disqus)
+disqus-identifier: anvodstudio-demo # Add your shortname for Disqus Comment. For example anvodstudio-demo
+
+
+#-------------------------------
+# Google Analytics
+google-analytics: # Add your GA Tracking Id
