@@ -2,6 +2,7 @@
 layout: page
 title: About Me | Michael Colella
 image: '/images/colella.jpg'
+permalink: '/about/'
 ---
 Hi! My name is Michael. I'm a mechanical engineer at Simpson Gumpertz & Heger, where I provide design and analysis assistance using computational fluid dynamics for large-scale facilities like fission and fusion reactors, airports, muesums, and wastewater treatment plants. I am a professional engineer licensed in New York.
 
