@@ -1,0 +1,50 @@
+<!-- begin footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+
+        <div class="footer__inner">
+          <div class="row">
+            <div class="col col-4 col-d-12">
+              <div class="footer__info">
+                <div class="logo-footer">
+                  <a class="logo-footer__link" href="{{ site.baseurl }}/">Michael Colella
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col col-4 col-d-12">
+              <div class="footer__navigation">
+                <ul class="footer__navigation__list list-reset">
+                  {% for item in site.data.settings.footer_menu__settings.menu__items %}
+                  <li class="footer__navigation__item">
+                    <a href="{{ item.url | relative_url }}" class="footer__navigation__link">{{ item.title }}</a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+            <div class="col col-4 col-d-12">
+              {% if site.data.settings.social %}
+              <div class="footer__social">
+                <ul class="footer__social__list list-reset">
+                  {% for social in site.data.settings.social %}
+                  <li class="footer__social__item">
+                    <a class="footer__social__link" href="{{ social.link }}" target="_blank" rel="noopener" aria-label="{{ social.name }} link"><i class="{{ social.icon }}"></i></a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <div class="copyright">{{site.time | date: '%Y'}} &copy; <a href="/">{{site.data.settings.title}}</a></div>
+
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->

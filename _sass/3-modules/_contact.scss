@@ -1,0 +1,59 @@
+/* Contact */
+.contact-head {
+  margin-bottom: 32px;
+}
+
+.contact-description {
+  font-size: 18px;
+
+  @media (max-width: $mobile) {
+    font-size: inherit;
+  }
+}
+
+.form__top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  @media (max-width: $mobile) {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+}
+
+.form__group {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.form__input {
+  width: 100%;
+  padding: 20px 24px;
+  font-size: 16px;
+  font-weight: 400;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  outline: 0;
+  transition: $global-transition;
+  resize: vertical;
+  color: var(--heading-font-color);
+  background: var(--background-alt-color);
+
+  &::placeholder {
+    color: var(--text-alt-color);
+  }
+
+  &:focus {
+    border-color: var(--heading-font-color);
+    background: transparent;
+
+    &::placeholder {
+      color: var(--heading-font-color);
+    }
+  }
+
+  @media (max-width: $tablet) {
+    padding: 20px;
+  }
+}

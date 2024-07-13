@@ -1,0 +1,186 @@
+/* Project */
+.project-head {
+  max-width: 100%;
+  margin: 0px auto 40px;
+  display: flex;
+
+  @media (max-width: $tablet) {
+    margin: 48px auto 32px;
+  }
+
+  @media (max-width: $tablet) {
+    margin: 32px 0;
+  }
+}
+
+.project-info {
+
+  .project-label {
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-alt-color);
+  }
+
+  .project-title {
+    font-size: 52px;
+  }
+
+  @media (max-width: $tablet) {
+    .project-label {
+      font-size: inherit;
+    }
+
+    .project-title {
+      font-size: 42px;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    .project-title {
+      font-size: 32px;
+    }
+  }
+}
+
+.project-image {
+  position: relative;
+  transform: translate(0);
+  padding-top: 50%;
+  min-height: 280px;
+  border-radius: 22px;
+  overflow: hidden;
+  background: var(--background-alt-color);
+  width: 50%;
+  flex-shrink: 0;
+  float: left;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+  }
+
+  @media (max-width: $tablet) {
+    border-radius: 16px;
+  }
+
+  @media (max-width: $mobile) {
+    padding-top: 100%;
+  }
+}
+
+.project-intro {
+  padding-left: 20px;
+  align-content: center;
+}
+
+.project-video {
+  border-radius: 22px;
+  overflow: hidden;
+  transform: translate(0);
+  background-color: var(--background-alt-color);
+
+  .project-video__wrap {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 80%;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    border-radius: 16px;
+  }
+
+  @media (max-width: $mobile) {
+    .project-video__wrap {
+      padding-bottom: 100%;
+    }
+  }
+}
+
+.project-content {
+  max-width: 1500px;
+  margin: 0 auto 96px;
+
+  a {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    color: blue;
+  }
+
+  img,
+  .js-reframe {
+    border-radius: 22px;
+    overflow: hidden;
+
+    &.lightense-open {
+      border-radius: 0;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    margin: 0 auto 80px;
+
+    img,
+    .js-reframe {
+      border-radius: 16px;
+    }
+  }
+}
+
+@media (max-width: $desktop) {
+  .row .col:last-child.project {
+    flex-grow: 1;
+  }
+}
+
+.project-main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.content-container {
+  max-width: 1500px;
+  margin: auto;
+}
+
+.paragraph-container {
+  display: flex;
+  align-items: flex-start; /* Aligns items at the top */
+  flex-wrap: wrap; /* Allows items to wrap as needed */
+}
+
+.text-content.text-basis-70 {
+  flex-basis: 70%;
+}
+
+.text-content.text-basis-full {
+  flex-basis: 100%;
+}
+
+.image-content, .video-content {
+  flex: 1 1 30%; /* Image content takes up 30% of the container */
+  padding: 10px; /* Adds padding around images */
+  text-align: center; /* Centers the image within the div */
+}
+
+.image-content img, .video-content video {
+  width: 400px;
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 8px; /* Optional: Adds rounded corners to images */
+}

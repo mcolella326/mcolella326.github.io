@@ -1,2 +1,1 @@
-# mcolella326.github.io
-Michael Colella's personal portfolio
+This is the source code for my personal website: [https://michaelcolella.net](https://michaelcolella.net/).

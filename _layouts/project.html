@@ -1,0 +1,114 @@
+---
+layout: default
+---
+
+<div class="container">
+
+  <div class="project-content">
+
+    <div class="project-info">
+      {% if page.title %}
+      <h1 class="project-title">{{ page.title }}</h1>
+      {% endif %}
+    </div>
+
+    <div class="project-head">
+      {% if page.video_embed %}
+      <div class="project-video">
+        <div class="project-video__wrap">
+          <iframe src="{{ page.video_embed }}" loading="lazy" width="640" height="360" frameborder="0"
+            webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+      </div>
+      {% else %}
+      {% if page.image %}
+      <div class="project-image">
+        <img class="lazy" data-src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+      </div>
+      <div class="project-intro">
+        <p><strong>Timeline:</strong><br>{{ page.timeline }}</p>
+        <p><strong>Tools used:</strong><br>{{ page.tools }}</p>
+      </div>
+      {% endif %}
+      {% endif %}
+    </div>
+
+    <div class="content-container">
+      {% capture rendered_content %}{{ content | markdownify }}{% endcapture %}
+      {% assign paragraphs = rendered_content | split: '</p>' %}
+      {% for paragraph in paragraphs %}
+          {% if paragraph contains '<p>' %}
+            {% assign paragraph_index = forloop.index0 %}
+            {% assign media_for_paragraph = page.medias | where: "paragraph_index", paragraph_index %}
+            {% assign media_exists = media_for_paragraph | size %}
+              <div class="paragraph-container">
+                <div class="text-content {% if media_exists > 0 %}text-basis-70{% else %}text-basis-full{% endif %}">
+                  {{ paragraph | append: '</p>' }}
+                </div>
+                  {% for media in media_for_paragraph %}
+                    {% if media.media_type == 'image' %}
+                      <div class="image-content">
+                          <img src="{{ media.url | relative_url }}" alt="Image related to paragraph {{ paragraph_index }}">
+                          <em>{{ media.subtitle }}</em>
+                      </div>
+                    {% elsif media.media_type == 'video' %}
+                      <div class="video-content">
+                        <video controls width="100%">
+                          <source src="{{ media.url | relative_url }}" type="video/mp4">
+                          Your browser does not support the video tag.
+                        </video>
+                        <em>{{ media.subtitle }}</em>
+                      </div>
+                    {% endif %}
+                  {% endfor %}
+              </div>
+          {% endif %}
+      {% endfor %}
+    </div>
+
+  </div>
+
+  <section class="section section-related">
+    <div class="section__info section__info__center">
+      <div class="section__head">
+        <h2 class="section__title">See other projects</h2>
+      </div>
+    </div>
+
+    <div class="row">
+    {% assign project-collection = site[page.collection] | sample:4 %}
+    {% assign relatedCount = 0 %}
+    {% for project in project-collection %}
+      {% if project.url != page.url %}
+      <article class="project col col-4 col-d-6 col-t-12">
+        <div class="project__content">
+          <a href="{{ project.url }}" class="project__image">
+            {% if project.image and project.video_embed %}
+            <div class="video-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                <polygon points="40,30 70,50 40,70"></polygon>
+              </svg>
+            </div>
+            {% endif %}
+            <img class="lazy" data-src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+          </a>
+          <div class="project__info">
+            {% if project.label %}
+            <div class="project__label">{{ project.label }}</div>
+            {% endif %}
+            {% if project.title %}
+            <h3 class="project__title"><a class="project__link" href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+            {% endif %}
+          </div>
+        </div>
+      </article>
+      {% assign relatedCount = relatedCount | plus: 1 %}
+      {% if relatedCount >= 3 %}
+        {% break %}
+      {% endif %}
+      {% endif %}
+    {% endfor %}
+    </div>
+  </section>
+
+</div>

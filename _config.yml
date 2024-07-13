@@ -1,0 +1,50 @@
+#-------------------------------
+# General Site Settings
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://www.michaelcolella.net" # the base hostname & protocol for your site, e.g. http://example.com
+
+
+#-------------------------------
+# Build Settings
+markdown: kramdown
+permalink: /:title
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+
+#-------------------------------
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:name
+  projects:
+    output: true
+    permalink: /project/:slug
+
+# Pages Path
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "experiences"
+    values:
+      layout: "experience"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+
+
+sass:
+  sass_dir: _sass
+  style: compressed

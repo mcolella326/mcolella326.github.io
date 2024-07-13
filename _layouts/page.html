@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<div class="container">
+
+  <div class="page__head">
+    <div class="page__info">
+      {% if page.title %}
+      <h1 class="page__title">{{ page.title | split: "|" | first }}</h1>
+      {% endif %}
+      {% if page.description %}
+      <div class="page__description">{{ page.description }}</div>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- begin page -->
+  <article class="page">
+    <div class="page__content">
+      <div class="page__text">
+      {{ content }}
+      </div>
+      <div class="page-image">
+        <img class="lazy" data-src="{{site.baseurl}}{{page.image}}" alt="{{page.title}}" loading="lazy">
+      </div>
+    </div>
+  </article>
+  <!-- end page -->
+
+</div>

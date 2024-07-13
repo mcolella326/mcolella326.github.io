@@ -1,0 +1,254 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  letter-spacing: $base-letter-spacing;
+  overflow-x: hidden;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  overflow: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &.disable-animation {
+    *, *::after, *::before {
+      transition: none !important;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    font-size: 16px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font-family;
+  font-weight: $heading-font-weight;
+  line-height: $heading-line-height;
+  letter-spacing: $heading-letter-spacing;
+  color: var(--heading-font-color);
+}
+
+h1 {
+  font-size: $font-size-h1;
+}
+
+h2 {
+  font-size: $font-size-h2;
+}
+
+h3 {
+  font-size: $font-size-h3;
+}
+
+h4 {
+  font-size: $font-size-h4;
+}
+
+h5 {
+  font-size: $font-size-h5;
+}
+
+h6 {
+  font-size: $font-size-h6;
+}
+
+blockquote {
+  position: relative;
+  margin: 48px 0;
+  padding-left: 32px;
+  font-family: $heading-font-family;
+  font-size: 28px;
+  line-height: 1.6;
+  font-style: normal;
+  font-weight: 700;
+  border-left: 4px solid var(--primary-color);
+  color: var(--heading-font-color);
+
+  p {
+    margin-bottom: 0;
+  }
+
+  cite {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--heading-font-color);
+
+  }
+
+  @media (max-width: $wide) {
+    margin: 40px 0;
+    font-size: 28px;
+  }
+
+  @media (max-width: $tablet) {
+    font-size: 22px;
+  }
+
+  @media (max-width: $mobile) {
+    margin: 32px 0;
+    padding-left: 20px;
+    font-size: 20px;
+  }
+}
+
+pre {
+  overflow: auto;
+  padding: 15px;
+  margin-bottom: 0;
+  font-size: 14px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-all;
+  color: var(--heading-font-color);
+}
+
+img,
+.lightense-wrap {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+img,
+.lightense-wrap,
+.gallery, video {
+  &+em {
+    display: block;
+    margin-top: 16px;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+    color: var(--text-alt-color);
+
+    a {
+      font-weight: 500;
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+      transition: $global-transition;
+
+      &:hover {
+        text-decoration-color: var(--link-color);
+      }
+    }
+
+    @media (max-width: $mobile) {
+      margin-top: 12px;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  margin: 60px 0;
+  border: 0;
+  background-color: var(--border-color);
+
+  @media (max-width: $mobile) {
+    margin: 40px 0;
+  }
+}
+
+.table-container {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  font-size: 12px;
+  color: var(--dark);
+  width: 100%;
+  border-width: 1px;
+  border-color: var(--background-alt-color);
+  border-collapse: collapse;
+  color: var(--heading-font-color);
+}
+
+table th {
+  padding: 10px;
+  font-size: 16px;
+  text-align: left;
+  border: 1px solid var(--th-color);
+  color: var(--heading-font-color);
+  font-weight: 700;
+}
+
+table tr {
+  background-color: var(--tr-color);
+  transition: all .3s ease;
+  &:nth-child(even) {
+    background-color: transparent;
+  }
+}
+
+table td {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid var(--background-alt-color);
+}
+
+.video-icon {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 68px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--white);
+  overflow: hidden;
+  pointer-events: none;
+  transition: $global-transition;
+  will-change: transform;
+
+  svg {
+    width: 44px;
+    fill: var(--dark);
+    stroke: var(--dark);
+    stroke-linejoin: round;
+    stroke-width: 8;
+  }
+}
+
+.lazy {
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.lazy.loaded {
+  opacity: 1;
+}
+
+.lightense-backdrop {
+  background-color: var(--background-color) !important;
+}

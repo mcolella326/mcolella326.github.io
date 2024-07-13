@@ -1,0 +1,37 @@
+#-------------------------------
+# Site Settings
+title: Michael Colella
+description: A collection of projects and experiences from Michael Colella
+logo: "/images/logo.svg"
+logo_dark: "/images/logo-dark.svg"
+color_scheme: light
+
+
+#-------------------------------
+# Navigation Settings
+menu_settings:
+  menu_items:
+    - title: "Portfolio"
+      url: "/"
+    - title: "Experience"
+      url: "/experience/"
+    - title: "About"
+      url: "/about/"
+
+#-------------------------------
+# Footer Settings
+
+# Footer Navigation
+footer_menu__settings:
+  menu__items:
+    - title: 'Portfolio'
+      url: '/'
+    - title: 'Experience'
+      url: '/experience/'
+    - title: 'About'
+      url: '/about/'   
+
+# Social Links
+social:
+- {icon: "fa-brands fa-linkedin", name: "LinkedIn", link: "https://www.linkedin.com/in/michaelcolella/"}
+- {icon: "fa-brands fa-github", name: "GitHub", link: "https://github.com/mcolella326"}

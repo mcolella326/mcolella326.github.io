@@ -1,0 +1,71 @@
+/* Color Scheme */
+
+:root {
+  --primary-color: #96ff65;
+  --white: #fff;
+  --light-gray: #f0f0f0;
+  --lighten-blue: #eaecef;
+  --light-blue: #e4e6eb;
+  --blue-gray: #6b7280;
+  --gray: #9e9e9e;
+  --dark: #030711;
+
+  --background-color: var(--white);
+  --background-alt-color: var(--lighten-blue);
+  --background-alt-color-2: var(--light-blue);
+
+  --text-color: var(--dark);
+  --text-alt-color: var(--blue-gray);
+
+  --heading-font-color: var(--dark);
+
+  --link-color: var(--dark);
+  --link-color-hover: var(--dark);
+
+  --button-color: var(--white);
+  --button-background-color: var(--dark);
+  --button-color-hover: var(--dark);
+  --button-background-hover: var(--primary-color);
+
+  --border-color: var(--light-blue);
+  --border-alt-color: var(--white);
+
+  --th-color: var(--light-gray);
+  --tr-color: var(--light-gray);
+
+  --syntax-highlighting-background: var(--light-gray);
+}
+
+:root[dark] {
+  --primary-color: #d14984;
+  --white: #fff;
+  --light-gray: #f5f5f5;
+  --gray: #9a9a9a;
+  --dark: #2b2d31;
+  --dark-blue: #1a1b1e;
+
+  --background-color: var(--dark-blue);
+  --background-alt-color: var(--dark);
+  --background-alt-color-2: #34363a;
+
+  --text-color: var(--gray);
+  --text-alt-color: var(--gray);
+
+  --heading-font-color: var(--light-gray);
+
+  --link-color: var(--light-gray);
+  --link-color-hover: var(--light-gray);
+
+  --button-color: var(--white);
+  --button-background-color: var(--primary-color);
+  --button-color-hover: var(--white);
+  --button-background-hover: #ea4890;
+
+  --border-color: #333;
+  --border-alt-color: #333;
+
+  --th-color: var(--dark);
+  --tr-color: var(--dark);
+
+  --syntax-highlighting-background: var(--dark);
+}

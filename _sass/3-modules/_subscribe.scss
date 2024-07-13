@@ -1,0 +1,123 @@
+/* Subscribe */
+.subscribe__inner {
+  position: relative;
+  padding: 96px 32px;
+  border-radius: 22px;
+  background-color: var(--dark);
+
+  .subscribe__content {
+    position: relative;
+    z-index: 1;
+    max-width: 620px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .subscribe__title,
+  .subscribe__description {
+    color: var(--white);
+  }
+
+  .subscribe__title {
+    margin-bottom: 24px;
+    font-size: 40px;
+    line-height: 1;
+  }
+
+  .subscribe__description {
+    font-size: 16px;
+    letter-spacing: -.6px;
+    opacity: .8;
+  }
+
+  .subscribe-form {
+    position: relative;
+    z-index: 1;
+    max-width: 520px;
+    margin: 0 auto;
+
+    .subscribe-email {
+      width: 100%;
+      height: 60px;
+      padding: 20px 80px 20px 20px;
+      font-size: 16px;
+      outline: 0;
+      border: 2px solid transparent;
+      border-radius: 60px;
+      color: var(--heading-font-color);
+      background-color: var(--background-color);
+
+      &:focus {
+        border: 2px solid var(--primary-color);
+        color: var(--white);
+        background-color: transparent;
+
+        &::placeholder {
+          color: var(--white);
+        }
+      }
+
+      &::placeholder {
+        color: var(--heading-font-color);
+      }
+    }
+
+    .subscribe-button {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+      padding: 20px 28px;
+      font-size: 16px;
+      border: none;
+      border-radius: 60px;
+      outline: none;
+      color: var(--button-color);
+      background-color: var(--button-background-color);
+      transition: $global-transition;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--button-color-hover);
+        background-color: var(--button-background-hover);
+      }
+    }
+  }
+
+  .round-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .round-right {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: rotate(-180deg);
+  }
+
+  @media (max-width: $tablet) {
+    padding: 64px 32px;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 32px;
+
+    .subscribe__title {
+      font-size: 32px;
+    }
+
+    .subscribe__description {
+      margin-bottom: 24px;
+    }
+
+    .round-left,
+    .round-right {
+      opacity: .7;
+    }
+  }
+}
