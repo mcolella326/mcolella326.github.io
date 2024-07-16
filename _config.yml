@@ -2,7 +2,7 @@
 # General Site Settings
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.michaelcolella.net" # the base hostname & protocol for your site, e.g. http://example.com
-include: ['_pages']
+# include: ['_pages']
 
 #-------------------------------
 # Build Settings
@@ -30,9 +30,9 @@ defaults:
       layout: "default"
   - scope:
       path: ""
-      type: "pages"
+      type: "abouts"
     values:
-      layout: "page"
+      layout: "about"
   - scope:
       path: ""
       type: "experiences"
