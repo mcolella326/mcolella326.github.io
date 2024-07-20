@@ -1,5 +1,5 @@
 ---
-title: Turducken Thermal Design & Analysis
+title: Turducken Thermal Design and Analysis
 date: 2017-12-11
 label: Fall 2017
 description: Designing a turducken cooking system in SolidWorks and evaluating its performance with a transient thermal analysis in ANSYS Workbench

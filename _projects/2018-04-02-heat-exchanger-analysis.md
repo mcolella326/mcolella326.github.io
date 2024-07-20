@@ -1,5 +1,5 @@
 ---
-title: Heat Exchanger Design & CFD Analysis
+title: Heat Exchanger Design and CFD Analysis
 date: 2018-04-02
 label: Spring 2018
 description: Designing an automotive heat exchanger in SolidWorks and evaluating its performance with a steady-state CFD analysis in ANSYS Fluent

@@ -3,7 +3,7 @@ title: Measuring the Traction Limits and Suspension Forces of a Formula SAE Race
 date: 2018-05-04
 label: Spring 2018
 description: Using traction circles and onbard data acquisition systems to compare overall vehicle performance and to better characterize the suspension system of a Formula SAE-style racecar
-image: '/images/traction_overall.png'
+image: '/images/traction_coilover_wide.png'
 featured:
 timeline: Spring 2018
 tools: Data acquisition system with linear potentiometers and accelerometers, SolidWorks, MATLAB
