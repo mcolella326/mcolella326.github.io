@@ -1,7 +1,7 @@
 /* Color Scheme */
 
 :root {
-  --primary-color: #96ff65;
+  --primary-color: #e4e6eb;
   --white: #fff;
   --light-gray: #f0f0f0;
   --lighten-blue: #eaecef;
@@ -22,8 +22,8 @@
   --link-color: var(--dark);
   --link-color-hover: var(--dark);
 
-  --button-color: var(--white);
-  --button-background-color: var(--dark);
+  --button-color: var(--dark);
+  --button-background-color: var(--lighten-blue);
   --button-color-hover: var(--dark);
   --button-background-hover: var(--primary-color);
 

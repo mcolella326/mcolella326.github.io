@@ -4,7 +4,7 @@ date: 2018-04-30
 label: Spring 2018
 description: Designing an axial flow compressor in SolidWorks and evaluating its performance with a transient CFD analysis in ANSYS Fluent
 image: '/images/compressor_stage_iso.png'
-featured:
+featured: true
 timeline: Spring 2018
 tools: ANSYS Fluent, SolidWorks, Excel
 medias:

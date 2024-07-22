@@ -20,7 +20,7 @@ collections:
     permalink: /:name
   projects:
     output: true
-    permalink: /project/:slug
+    permalink: /portfolio/:slug
 
 # Pages Path
 defaults:

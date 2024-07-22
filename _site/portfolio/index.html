@@ -6,10 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Michael Colella</title>
+  <title>Portfolio | Michael Colella</title>
   <meta name='description' content='A collection of projects and experiences from Michael Colella'>
 
-  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="canonical" href="http://localhost:4000/portfolio/">
   <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
 
   <!-- Fonts -->
@@ -47,7 +47,7 @@
   </style>
 </head>
 
-<body class="home-page">
+<body class="">
 
   <!-- begin header -->
 <header class="header">
@@ -70,13 +70,13 @@
               
               
               <li class="nav__item">
-                <a href="/" class="nav__link active-link">Home</a>
+                <a href="/" class="nav__link">Home</a>
               </li>
               
               
               
               <li class="nav__item">
-                <a href="/portfolio/" class="nav__link">Portfolio</a>
+                <a href="/portfolio/" class="nav__link active-link">Portfolio</a>
               </li>
               
               
@@ -106,54 +106,39 @@
   <!-- begin content -->
   <main class="content" aria-label="Content">
     <div class="container">
-  <div class="page__head">
-    <div class="page__info">
-      
-      <h1 class="page__title">Welcome to my portfolio!</h1>
-      
-      
-      <p class="page__description"></p>
-      
-    </div>
+  <div class="page-section-head">
+    <h1 class="page-title">Portfolio </h1>
+    
+    <p class="page-description"></p>
+    
   </div>
 </div>
 
-<!-- begin page -->
-<article class="page">
-  <div class="page__content">
-    <div class="page__text">
-      <p>Hi! My name is Michael. I'm a mechanical engineer at Simpson Gumpertz & Heger, where I provide design and analysis assistance using computational fluid dynamics for large-scale facilities like fission and fusion reactors, airports, museums, and wastewater treatment plants. I am a professional engineer licensed in New York.</p>
-      <p>I graduated from Cooper Union with a Bachelor's in mechanical engineering. As an undergraduate, I had assisted in the design, analysis, and manufacturing of racecars for my college's FSAE team, where I led the Frame subdivision for three years.</p>
-      <p>My professional interests include thermal design and analysis, fluid mechanics, and manufacturing. In my free time, I'm typically 3D printing, working on side projects, or scheduling way too many board game nights with friends.</p>
-      <p>Contact me by email <a href="mailto:mcolella326@gmail.com">here</a>. Feel free to get in touch if you have any questions about my work or résumé!</p>
-    </div>
-    <div class="page-image">
-      <img class="lazy" data-src="/images/colella.jpg" alt="Michael Colella" loading="lazy">
-    </div>
-  </div>
-</article>
-<!-- end page -->
-
-<!-- begin featured section -->
+<!-- begin projects -->
 <section class="section projects animate">
   <div class="container">
     <div class="container__inner">
-
-      <div class="section__info">
-        <div class="section__head">
-          <h2 class="section__title">Featured Projects</h2>
-          <a class="section__link" href="/portfolio">View all <i class="fa-solid fa-chevron-right"></i></a>
-        </div>
-      </div>
-
       <div class="row">
-      
-      
-
-      
         
-      
-        
+        <article class="project col col-4 col-d-6 col-t-12">
+          <div class="project__content">
+            <a href="/portfolio/ferrofluid" class="project__image">
+              
+              <img class="lazy" data-src="/images/ferrofluid_setup.png" alt="Magnetic Fluid Control System for Drug Therapy">
+            </a>
+            <div class="project__info">
+              
+              <div class="project__label">Fall 2018 - Spring 2019</div>
+              
+              
+              <h3 class="project__title"><a class="project__link" href="/portfolio/ferrofluid">Magnetic Fluid Control System for Drug Therapy</a></h3>
+              
+              
+              <div class="project__description">Developing a novel method for controlling ferrofluid particulates in 2D space using an electromagnet array, magnetometers, and a nonlinear control algorithm</div>
+              
+            </div>
+          </div>
+        </article>
         
         <article class="project col col-4 col-d-6 col-t-12">
           <div class="project__content">
@@ -175,10 +160,25 @@
           </div>
         </article>
         
-      
-        
-      
-        
+        <article class="project col col-4 col-d-6 col-t-12">
+          <div class="project__content">
+            <a href="/portfolio/traction-circle" class="project__image">
+              
+              <img class="lazy" data-src="/images/traction_coilover_wide.png" alt="Measuring the Traction Limits and Suspension Forces of a Formula SAE Racecar">
+            </a>
+            <div class="project__info">
+              
+              <div class="project__label">Spring 2018</div>
+              
+              
+              <h3 class="project__title"><a class="project__link" href="/portfolio/traction-circle">Measuring the Traction Limits and Suspension Forces of a Formula SAE Racecar</a></h3>
+              
+              
+              <div class="project__description">Using traction circles and onbard data acquisition systems to compare overall vehicle performance and to better characterize the suspension system of a Formula SAE-style racecar</div>
+              
+            </div>
+          </div>
+        </article>
         
         <article class="project col col-4 col-d-6 col-t-12">
           <div class="project__content">
@@ -200,9 +200,6 @@
           </div>
         </article>
         
-      
-        
-        
         <article class="project col col-4 col-d-6 col-t-12">
           <div class="project__content">
             <a href="/portfolio/heat-exchanger-analysis" class="project__image">
@@ -222,9 +219,6 @@
             </div>
           </div>
         </article>
-        
-      
-        
         
         <article class="project col col-4 col-d-6 col-t-12">
           <div class="project__content">
@@ -246,12 +240,11 @@
           </div>
         </article>
         
-      
       </div>
     </div>
   </div>
 </section>
-<!-- end featured section -->
+<!-- end projects -->
 
   </main>
   <!-- end content -->

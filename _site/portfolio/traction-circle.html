@@ -6,10 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Michael Colella</title>
-  <meta name='description' content='A collection of projects and experiences from Michael Colella'>
+  <title>Measuring the Traction Limits and Suspension Forces of a Formula SAE Racecar</title>
+  <meta name='description' content='Using traction circles and onbard data acquisition systems to compare overall vehicle performance and to better characterize the suspension system of a Formu...'>
 
-  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="canonical" href="http://localhost:4000/portfolio/traction-circle">
   <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
 
   <!-- Fonts -->
@@ -47,7 +47,7 @@
   </style>
 </head>
 
-<body class="home-page">
+<body class="">
 
   <!-- begin header -->
 <header class="header">
@@ -70,7 +70,7 @@
               
               
               <li class="nav__item">
-                <a href="/" class="nav__link active-link">Home</a>
+                <a href="/" class="nav__link">Home</a>
               </li>
               
               
@@ -106,152 +106,347 @@
   <!-- begin content -->
   <main class="content" aria-label="Content">
     <div class="container">
-  <div class="page__head">
-    <div class="page__info">
+
+  <div class="project-content">
+
+    <div class="project-info">
       
-      <h1 class="page__title">Welcome to my portfolio!</h1>
-      
-      
-      <p class="page__description"></p>
+      <h1 class="project-title">Measuring the Traction Limits and Suspension Forces of a Formula SAE Racecar</h1>
       
     </div>
+
+    <div class="project-head">
+      
+      
+      <div class="project-image">
+        <img class="lazy" data-src="/images/traction_coilover_wide.png" alt="Measuring the Traction Limits and Suspension Forces of a Formula SAE Racecar">
+      </div>
+      <div class="project-intro">
+        <p><strong>Timeline:</strong><br>Spring 2018</p>
+        <p><strong>Tools used:</strong><br>Data acquisition system with linear potentiometers and accelerometers, SolidWorks, MATLAB</p>
+      </div>
+      
+      
+    </div>
+
+    <div class="content-container">
+      
+      
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  <h1 id="background">Background</h1>
+
+<p>The goal of this project was to use an onboard data acquisition system to better determine the loading distribution in the Cooper Union Formula SAE racecar suspension system throughout a typical autocross event. Each corner of the vehicle was equipped with a coilover-linear potentiometer system; the force exerted on each suspension member was determined by using real-time displacement data in conjunction with the spring constant and damper coefficient for each coilover. Using these suspension forces, we determined the force exerted on each tire and used this value as a baseline to improve suspension system effectiveness. Additionally, a traction circle (a plot showing the extents of lateral and longitudinal acceleration of the vehicle throughout the autocross event) was generated for a set of drivers and was used to identify weak areas among drivers and to compare actual vehicle performance relative to design constraints.</p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<h1 id="project-description">Project Description</h1>
+
+<p>We characterized the suspension performance of the 2018 Cooper Motorsports FSAE vehicle under accelerating, braking, and cornering conditions by placing linear potentiometers alongside the coilover shocks of the suspension system and recording their deflections during a test autocross event. These deflections were used to calculate the movement of the suspension system. Using known spring and damping coefficients, we calculated the force through the spring-damper system, which can then be used to calculate the weight on the tires. Understanding these loads is essential to minimize the weight of the suspension system. Furthermore, understanding how loads are distributed throughout the suspension system can help with structural integrity and make suspension theory easier to apply for future vehicles.</p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<div class="gallery-box">
+  <div class="gallery_two">
+    <img src="/images/traction_coilovers.png" loading="lazy" alt="Vehicle coilover locations" />
   </div>
+  <em>2018 Cooper Motorsports FSAE vehicle coilover shock locations (highlighted in orange).</em>
 </div>
 
-<!-- begin page -->
-<article class="page">
-  <div class="page__content">
-    <div class="page__text">
-      <p>Hi! My name is Michael. I'm a mechanical engineer at Simpson Gumpertz & Heger, where I provide design and analysis assistance using computational fluid dynamics for large-scale facilities like fission and fusion reactors, airports, museums, and wastewater treatment plants. I am a professional engineer licensed in New York.</p>
-      <p>I graduated from Cooper Union with a Bachelor's in mechanical engineering. As an undergraduate, I had assisted in the design, analysis, and manufacturing of racecars for my college's FSAE team, where I led the Frame subdivision for three years.</p>
-      <p>My professional interests include thermal design and analysis, fluid mechanics, and manufacturing. In my free time, I'm typically 3D printing, working on side projects, or scheduling way too many board game nights with friends.</p>
-      <p>Contact me by email <a href="mailto:mcolella326@gmail.com">here</a>. Feel free to get in touch if you have any questions about my work or résumé!</p>
-    </div>
-    <div class="page-image">
-      <img class="lazy" data-src="/images/colella.jpg" alt="Michael Colella" loading="lazy">
-    </div>
+<p>The coilover model used already had a fixed specification for the spring constant. The damper coefficient was determined via manufacturer damper curves.</p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<div class="gallery-box">
+  <div class="gallery_two">
+    <img src="/images/traction_damper.png" loading="lazy" alt="Shock damper curves" />
   </div>
-</article>
-<!-- end page -->
+  <em>Coilover shock damper curve.</em>
+</div>
 
-<!-- begin featured section -->
-<section class="section projects animate">
-  <div class="container">
-    <div class="container__inner">
+<h1 id="experimental-setup">Experimental Setup</h1>
 
-      <div class="section__info">
-        <div class="section__head">
-          <h2 class="section__title">Featured Projects</h2>
-          <a class="section__link" href="/portfolio">View all <i class="fa-solid fa-chevron-right"></i></a>
+<p>A set of PZ-12-A-75P linear potentiometers with a 75mm stroke was used to determine the forces in the suspension system. An AiM Evo 4 data logger with an onboard accelerometer and GPS and a sampling rate of 10 Hz was used to acquire traction circle data.</p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<div class="gallery-box">
+  <div class="gallery_two">
+    <img src="/images/traction_front_mounting.png" loading="lazy" alt="Linear potentiometer front shock mounting" />
+    <img src="/images/traction_rear_mounting.png" loading="lazy" alt="Linear potentiometer rear shock mounting" />
+  </div>
+  <em>Linear potentional front (left) and rear (right) coilover shock mounting (highlighted in orange).</em>
+</div>
+
+<p><br /></p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<div class="gallery-box">
+  <div class="gallery_two">
+    <img src="/images/traction_logger.png" loading="lazy" alt="Linear potentiometer data logger mounting" />
+  </div>
+  <em>Data logger mounting (highlighted in orange).</em>
+</div>
+
+<p>Each linear potentiometer was calibrated beforehand by supplying the potentiometers with a fixed voltage and recording the voltage output at set extension lengths under both lengthening and shortening events to account for hysteresis. Calibration results and error bars indicated reliable and repeatable behavior without any discernible hysteresis.</p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<div class="gallery-box">
+  <div class="gallery_two">
+    <img src="/images/traction_calibration_setup.png" loading="lazy" alt="Linear potentiometer calibration setup" />
+  </div>
+  <em>Linear potentiometer calibration setup.</em>
+</div>
+
+<p><br /></p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<div class="gallery-box">
+  <div class="gallery_two">
+    <img src="/images/traction_calibration_results.png" loading="lazy" alt="Linear potentiometer calibration results" />
+    <img src="/images/traction_calibration_error.png" loading="lazy" alt="Linear potentiometer calibration error bars" />
+  </div>
+  <em>Linear potentional calibration results (left) and error bars (right).</em>
+</div>
+
+<h1 id="results">Results</h1>
+
+<p>The data logger recorded data for five different drivers on an autocross, acceleration, and skidpad course. Acceleration data recorded from the autocross course was used to produce traction circles for the two drivers who drove that course. A comparison between the two drivers’ traction circles indicates that, while the two drivers had similar lateral accelerations, Driver One was capable of achieving higher longitudinal accelerations. This analysis suggest that Driver Two is not at the limits of the car’s longitudinal acceleration and as room for improvement in the autocross event.</p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<div class="gallery-box">
+  <div class="gallery_three">
+    <img src="/images/traction_driver1.png" loading="lazy" alt="Traction circle for Driver One" />
+    <img src="/images/traction_driver2.png" loading="lazy" alt="Traction circle for Driver Two" />
+    <img src="/images/traction_driver_comparison.png" loading="lazy" alt="Traction circle driver comparison" />
+  </div>
+  <em>Traction circle for Driver One (left), traction circle for Driver Two (middle), and traction circle comparison between drivers (right).</em>
+</div>
+
+<p>By combining the data from all five drivers, the resulting traction circle demonstrates the overall performance the vehicle is capable of relative to the five drivers who participated in the driving event. The overall traction circle shows a maximum lateral acceleration of approximately 1.5 g’s, which agrees with the predicted maximum lateral acceleration used to design the 2018 vehicle’s suspension.</p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<div class="gallery-box">
+  <div class="gallery_two">
+    <img src="/images/traction_overall.png" loading="lazy" alt="Traction circle overall results" />
+  </div>
+  <em>Traction circle results among all five drivers.</em>
+</div>
+
+<p>Data from the linear potentiometers was analyzed for the skidpad course. We determined the weight on the front and rear tires and the lateral force produced by the right tires using elementary force balances throughout the event.</p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<div class="gallery-box">
+  <div class="gallery_three">
+    <img src="/images/traction_front_force.png" loading="lazy" alt="Weight on front tires" />
+    <img src="/images/traction_rear_force.png" loading="lazy" alt="Weight on rear tires" />
+    <img src="/images/traction_lateral_force.png" loading="lazy" alt="Lateral force on right tires" />
+  </div>
+  <em>With linear potentiometer results, we approximated the weight on the front tires (left), the weight on the rear tires (middle), and the lateral force experienced by the right tires (right) along the skidpad course.</em>
+</div>
+
+<p>A 40-page paper published by the American Society for Engineering Education further detailing the course that allowed us the opportunity to obtain this data, sensor selection justification, and a full description of how the traction circle was generated can be found <a href="https://peer.asee.org/measuring-the-traction-limits-and-suspension-forces-of-a-formula-sae-racecar" target="_blank">here</a>.</p>
+                </div>
+                  
+              </div>
+          
+      
+          
+      
+    </div>
+
+  </div>
+
+  <section class="section section-related">
+    <div class="section__info section__info__center">
+      <div class="section__head">
+        <h2 class="section__title">See other projects</h2>
+      </div>
+    </div>
+
+    <div class="row">
+    
+    
+    
+      
+      <article class="project col col-4 col-d-6 col-t-12">
+        <div class="project__content">
+          <a href="/portfolio/heat-exchanger-analysis" class="project__image">
+            
+            <img class="lazy" data-src="/images/heatexchanger_front.png" alt="Heat Exchanger Design and CFD Analysis">
+          </a>
+          <div class="project__info">
+            
+            <div class="project__label">Spring 2018</div>
+            
+            
+            <h3 class="project__title"><a class="project__link" href="/portfolio/heat-exchanger-analysis">Heat Exchanger Design and CFD Analysis</a></h3>
+            
+          </div>
         </div>
-      </div>
-
-      <div class="row">
+      </article>
       
       
-
       
-        
+    
       
-        
-        
-        <article class="project col col-4 col-d-6 col-t-12">
-          <div class="project__content">
-            <a href="/portfolio/reu" class="project__image">
-              
-              <img class="lazy" data-src="/images/piv_cover_photo.png" alt="REU - PIV/CFD Study of Tumble Generation in a Pent-Roof Internal Combustion Engine">
-            </a>
-            <div class="project__info">
-              
-              <div class="project__label">Summer 2018</div>
-              
-              
-              <h3 class="project__title"><a class="project__link" href="/portfolio/reu">REU - PIV/CFD Study of Tumble Generation in a Pent-Roof Internal Combustion Engine</a></h3>
-              
-              
-              <div class="project__description">Using particle image velocimetry and CFD modeling techniques to validate and predict airflow patterns in an internal combustion engine</div>
-              
-            </div>
+    
+      
+      <article class="project col col-4 col-d-6 col-t-12">
+        <div class="project__content">
+          <a href="/portfolio/turducken-thermal-analysis" class="project__image">
+            
+            <img class="lazy" data-src="/images/turducken_mesh_iso.png" alt="Turducken Thermal Design and Analysis">
+          </a>
+          <div class="project__info">
+            
+            <div class="project__label">Fall 2017</div>
+            
+            
+            <h3 class="project__title"><a class="project__link" href="/portfolio/turducken-thermal-analysis">Turducken Thermal Design and Analysis</a></h3>
+            
           </div>
-        </article>
-        
+        </div>
+      </article>
       
-        
       
-        
-        
-        <article class="project col col-4 col-d-6 col-t-12">
-          <div class="project__content">
-            <a href="/portfolio/axial-flow-compressor-analysis" class="project__image">
-              
-              <img class="lazy" data-src="/images/compressor_stage_iso.png" alt="Axial Flow Compressor Design and CFD Analysis">
-            </a>
-            <div class="project__info">
-              
-              <div class="project__label">Spring 2018</div>
-              
-              
-              <h3 class="project__title"><a class="project__link" href="/portfolio/axial-flow-compressor-analysis">Axial Flow Compressor Design and CFD Analysis</a></h3>
-              
-              
-              <div class="project__description">Designing an axial flow compressor in SolidWorks and evaluating its performance with a transient CFD analysis in ANSYS Fluent</div>
-              
-            </div>
+      
+    
+      
+      <article class="project col col-4 col-d-6 col-t-12">
+        <div class="project__content">
+          <a href="/portfolio/axial-flow-compressor-analysis" class="project__image">
+            
+            <img class="lazy" data-src="/images/compressor_stage_iso.png" alt="Axial Flow Compressor Design and CFD Analysis">
+          </a>
+          <div class="project__info">
+            
+            <div class="project__label">Spring 2018</div>
+            
+            
+            <h3 class="project__title"><a class="project__link" href="/portfolio/axial-flow-compressor-analysis">Axial Flow Compressor Design and CFD Analysis</a></h3>
+            
           </div>
-        </article>
-        
+        </div>
+      </article>
+      
       
         
-        
-        <article class="project col col-4 col-d-6 col-t-12">
-          <div class="project__content">
-            <a href="/portfolio/heat-exchanger-analysis" class="project__image">
-              
-              <img class="lazy" data-src="/images/heatexchanger_front.png" alt="Heat Exchanger Design and CFD Analysis">
-            </a>
-            <div class="project__info">
-              
-              <div class="project__label">Spring 2018</div>
-              
-              
-              <h3 class="project__title"><a class="project__link" href="/portfolio/heat-exchanger-analysis">Heat Exchanger Design and CFD Analysis</a></h3>
-              
-              
-              <div class="project__description">Designing an automotive heat exchanger in SolidWorks and evaluating its performance with a steady-state CFD analysis in ANSYS Fluent</div>
-              
-            </div>
-          </div>
-        </article>
-        
-      
-        
-        
-        <article class="project col col-4 col-d-6 col-t-12">
-          <div class="project__content">
-            <a href="/portfolio/turducken-thermal-analysis" class="project__image">
-              
-              <img class="lazy" data-src="/images/turducken_mesh_iso.png" alt="Turducken Thermal Design and Analysis">
-            </a>
-            <div class="project__info">
-              
-              <div class="project__label">Fall 2017</div>
-              
-              
-              <h3 class="project__title"><a class="project__link" href="/portfolio/turducken-thermal-analysis">Turducken Thermal Design and Analysis</a></h3>
-              
-              
-              <div class="project__description">Designing a turducken cooking system in SolidWorks and evaluating its performance with a transient thermal analysis in ANSYS Workbench</div>
-              
-            </div>
-          </div>
-        </article>
-        
-      
-      </div>
     </div>
-  </div>
-</section>
-<!-- end featured section -->
+  </section>
+
+</div>
 
   </main>
   <!-- end content -->

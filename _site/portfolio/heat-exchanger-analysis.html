@@ -6,10 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Michael Colella</title>
-  <meta name='description' content='A collection of projects and experiences from Michael Colella'>
+  <title>Heat Exchanger Design and CFD Analysis</title>
+  <meta name='description' content='Designing an automotive heat exchanger in SolidWorks and evaluating its performance with a steady-state CFD analysis in ANSYS Fluent'>
 
-  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="canonical" href="http://localhost:4000/portfolio/heat-exchanger-analysis">
   <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
 
   <!-- Fonts -->
@@ -47,7 +47,7 @@
   </style>
 </head>
 
-<body class="home-page">
+<body class="">
 
   <!-- begin header -->
 <header class="header">
@@ -70,7 +70,7 @@
               
               
               <li class="nav__item">
-                <a href="/" class="nav__link active-link">Home</a>
+                <a href="/" class="nav__link">Home</a>
               </li>
               
               
@@ -106,152 +106,418 @@
   <!-- begin content -->
   <main class="content" aria-label="Content">
     <div class="container">
-  <div class="page__head">
-    <div class="page__info">
+
+  <div class="project-content">
+
+    <div class="project-info">
       
-      <h1 class="page__title">Welcome to my portfolio!</h1>
-      
-      
-      <p class="page__description"></p>
+      <h1 class="project-title">Heat Exchanger Design and CFD Analysis</h1>
       
     </div>
+
+    <div class="project-head">
+      
+      
+      <div class="project-image">
+        <img class="lazy" data-src="/images/heatexchanger_front.png" alt="Heat Exchanger Design and CFD Analysis">
+      </div>
+      <div class="project-intro">
+        <p><strong>Timeline:</strong><br>Spring 2018</p>
+        <p><strong>Tools used:</strong><br>ANSYS Fluent, SolidWorks, Excel</p>
+      </div>
+      
+      
+    </div>
+
+    <div class="content-container">
+      
+      
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-70">
+                  <h1 id="background">Background</h1>
+
+<p>The midterm project for Cooper Union’s Computational Fluid Dynamics (CFD) course split the class into 4-person teams to design an automotive heat exchanger under prespecified temperature and velocity constraints. The goal of this project is to minimize the size and dry weight of the heat exchanger while maintaining an engine oil temperature drop from 350°F to 195°F maximum, while the incoming air is at a temperature of 108°F, while the oil is flowing between 3.5 gpm and 5.5 gpm, and while the vehicle is moving at 25 mph. Air is delivered to cool the engine air via a duct mounted 60 inches upstream of the proposed heat exchanger; the design of the duct aside from its inlet area is also to be designed. No constraints are placed on material compatibility or pressure drops for air or oil across the heat exchanger aside from common sense engineering assumptions in line with existing automotive heat exchangers. We performed a set of steady-state CFD simulations in tandem with design and validation hand calculations to carry out this design task.</p>
+                </div>
+                  
+                    
+                      <div class="image-content">
+                          <img src="/images/heatexchanger_iso.png" alt="Image related to paragraph 0">
+                          <em>Heat exchanger and duct geometry.</em>
+                      </div>
+                    
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<p>Each team is provided with the same design limitations, performance criteria, and design goal. The assignment with all applicable rules is attached <a href="/pdfs/ME407_Midterm_Spring_2018.pdf" target="_blank">here</a>.</p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<h1 id="design-concept">Design Concept</h1>
+
+<p>Based on existing automotive heat exchanger designs, we elected to design a finned crossflow heat exchanger with a staggered tube bank and with both fluids unmixed. The heat exchanger tubes are made using copper and the duct is made using 6061 aluminum; the copper is chosen primarily for its high thermal conductivity, while the aluminum is chosen for its relatively low density and thermal conductivity. We neglected radiative effects in both the hand calculations and simulations based on a preliminary hand calculation confirming that radiative effects are very small compared to the forced convective effects throughout the heat exchanger. The heat exchanger duct smoothly transitions along its 60” length from the required 22” x 12” cross section to the 8” x 8” inlet area of the heat exchanger.</p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<div class="gallery-box">
+  <div class="gallery_two">
+    <img src="/images/heatexchanger_drawing1.png" loading="lazy" alt="Heat exchanger staggered tube arrangement" />
+    <img src="/images/heatexchanger_drawing2.png" loading="lazy" alt="Heat exchanger duct" />
   </div>
+  <em>Dimensioned design drawings of the heat exchanger (left) and duct (right). All dimensions are in inches.</em>
 </div>
 
-<!-- begin page -->
-<article class="page">
-  <div class="page__content">
-    <div class="page__text">
-      <p>Hi! My name is Michael. I'm a mechanical engineer at Simpson Gumpertz & Heger, where I provide design and analysis assistance using computational fluid dynamics for large-scale facilities like fission and fusion reactors, airports, museums, and wastewater treatment plants. I am a professional engineer licensed in New York.</p>
-      <p>I graduated from Cooper Union with a Bachelor's in mechanical engineering. As an undergraduate, I had assisted in the design, analysis, and manufacturing of racecars for my college's FSAE team, where I led the Frame subdivision for three years.</p>
-      <p>My professional interests include thermal design and analysis, fluid mechanics, and manufacturing. In my free time, I'm typically 3D printing, working on side projects, or scheduling way too many board game nights with friends.</p>
-      <p>Contact me by email <a href="mailto:mcolella326@gmail.com">here</a>. Feel free to get in touch if you have any questions about my work or résumé!</p>
-    </div>
-    <div class="page-image">
-      <img class="lazy" data-src="/images/colella.jpg" alt="Michael Colella" loading="lazy">
-    </div>
+<h1 id="design-hand-calculations">Design Hand Calculations</h1>
+
+<p>The design hand calculations “flatten out” the heat exchanger into a long straight tube with a set of rectangular fins surrounding the tube perimeter. Each of the assumptions made in these hand calculations was validated and refined using a more detailed CFD simulation. This approach allowed us to immediately see the effects of changing geometric parameters on the overall size and dry weight of the heat exchanger, greatly simplifying the design question to a multidimensional optimization problem. We opted to use Excel to organize our calculations; Excel’s Solver tool allowed for straightforward parameter optimization without the need for unnecessary simulation. Further, organizing in Excel allowed for easy visualization of how small changes in design parameters affected overall size, dry weight, air and oil flow regimes, and convective heat transfer coefficients.</p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<p><img src="/images/heatexchanger_geometry.png" alt="Heat exchanger simplified geometry" />
+<em>Heat exchanger simplified geometry.</em></p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<p>We calculated convection coefficients for oil flow inside the tube using the Dittus-Boelter equation, for air flow across the bare tube using a Nusselt number correlation for flow over a cylinder, and for air flow along the fins using a Nusselt number correlation for flow along a flat plate. With these coefficients, we created a thermal resistance network based on the simplified geometry and calculated the number of fins, heat exchanger size, and heat exchanger dry weight for a given set of geometric parameters based on the overall heat transfer coefficient and the heat transfer rate required to achieve the necessary temperature differences and mass flow rates in the air and oil streams.</p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<div class="gallery-box">
+  <div class="gallery_two">
+    <img src="/images/heatexchanger_thermal_circuit.png" loading="lazy" alt="Heat exchanger thermal circuit" />
   </div>
-</article>
-<!-- end page -->
+  <em>Heat exchanger thermal circuit for a fin and tube segment.</em>
+</div>
 
-<!-- begin featured section -->
-<section class="section projects animate">
-  <div class="container">
-    <div class="container__inner">
+<h1 id="cfd-simulation-setup-and-mesh">CFD Simulation Setup and Mesh</h1>
 
-      <div class="section__info">
-        <div class="section__head">
-          <h2 class="section__title">Featured Projects</h2>
-          <a class="section__link" href="/portfolio">View all <i class="fa-solid fa-chevron-right"></i></a>
+<p>We developed three CFD simulations in developing our heat exchanger design: one of the air duct to the heat exchanger, one of a single tube segment with two fins, and one with a simplified tube bank with two fins. The air duct simulation confirmed the heat exchanger entrance velocity and the pressure drop across the duct. The single tube segment simulation confirmed that the fin thickness and the distance between adjacent fins were set such that the thermal boundary layers would converge at the end of the modeled fin. The double tube segment simulation confirmed that the distance between tube rows was set such that the air from one row would not significantly thermally interact with the air the next row. This simulation also confirmed that the calculation method for determining the pressure drop for the air and oil in the design hand calculations was appropriate, accounting for the oil pressure drop across the tube bend.</p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<div class="gallery-box">
+  <div class="gallery_three">
+    <img src="/images/heatexchanger_duct.png" loading="lazy" alt="Heat exchanger duct geometry" />
+    <img src="/images/heatexchanger_twofin.png" loading="lazy" alt="Heat exchanger two-fin simulation geometry" />
+    <img src="/images/heatexchanger_twotube.png" loading="lazy" alt="Heat exchanger tube bank simulation geometry" />
+  </div>
+  <em>Heat exchanger simulation geometry for the duct simulation (left), the two-fin simulation (middle), and the tube bank simulation (right). Oil flows through the tube while air flows perpendicularly to the tube.</em>
+</div>
+
+<p>The air boundaries are all modeled as symmetry boundary conditions aside from the leftmost and rightmost walls, which have mass flow inlet and pressure outlet boundary conditions, respectively. The oil in the tube is modeled similarly with one mass flow inlet and one pressure outlet boundary condition.</p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<p>All simulations use the k-omega SST turbulence model; this model captures the near-wall behavior near the fins well while also capturing the fully turbulent free-stream flow in and around the heat exchanger tube bank. All simulations ran for 1,000 iterations in steady state using a pressure-based solver with the SIMPLE algorithm used for pressure/velocity coupling.</p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<p>We used polyhedral meshing in ANSYS Fluent to model both the air and solid copper for each simulation. All fluid regions have five-element tall boundary layers and all solid regions have one-element tall boundary layers to properly capture conjugate heat transfer between the materials and to maintain a wall y+ below 1 at the fins and along the tube/duct length.</p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<div class="gallery-box">
+  <div class="gallery_three">
+    <img src="/images/heatexchanger_duct_mesh1.png" loading="lazy" alt="Heat exchanger duct overall mesh" />
+    <img src="/images/heatexchanger_twofin_mesh1.png" loading="lazy" alt="Heat exchanger two-fin model overall mesh" />
+    <img src="/images/heatexchanger_twotube_mesh1.png" loading="lazy" alt="Heat exchanger tube bank model overall mesh" />
+    <img src="/images/heatexchanger_duct_mesh2.png" loading="lazy" alt="Heat exchanger duct mesh cross section" />
+    <img src="/images/heatexchanger_twofin_mesh2.png" loading="lazy" alt="Heat exchanger two-fin model mesh cross section" />
+    <img src="/images/heatexchanger_twotube_mesh2.png" loading="lazy" alt="Heat exchanger tube bank model mesh cross section" />
+  </div>
+  <em>Heat exchanger simulation mesh for the duct simulation (upper/lower left), the two-fin simulation (upper/lower middle), and the tube bank simulation (upper/lower right).</em>
+</div>
+
+<h1 id="results">Results</h1>
+
+<p>Our model results show close agreement with the design hand calculations (maximum ~15% difference) and prove that the assumptions made in these calculations were justified. Results indicate that an 8” x 8” x 8” heat exchanger weighing 24.33 lbs is sufficient to cool the engine oil to the required 195°F criterion while still maintaining a realistic oil and air pressure drop and maintaining a feasible, manufacturable design.</p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<div class="gallery-box">
+  <div class="gallery_three">
+    <img src="/images/heatexchanger_duct_comparison.png" loading="lazy" alt="Heat exchanger duct hand calculation comparison" />
+    <img src="/images/heatexchanger_twofin_comparison.png" loading="lazy" alt="Heat exchanger two-fin simulation hand calculation comparison" />
+    <img src="/images/heatexchanger_twotube_comparison.png" loading="lazy" alt="Heat exchanger tube bank simulation hand calculation comparison" />
+  </div>
+  <em>Comparison of design hand calculation results to duct simulation (left), two-fin simulation (middle), and tube bank simulation (right).</em>
+</div>
+
+<p><br /></p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<div class="gallery-box">
+  <div class="gallery_two">
+    <img src="/images/heatexchanger_duct_velocity.png" loading="lazy" alt="Heat exchanger duct velocity streamlines" />
+    <img src="/images/heatexchanger_duct_pressure.png" loading="lazy" alt="Heat exchanger duct pressure contours" />
+  </div>
+  <em>Summary of duct simulation velocity streamline results (left) and pressure contour results (right).</em>
+</div>
+
+<p><br /></p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<div class="gallery-box">
+  <div class="gallery_three">
+    <img src="/images/heatexchanger_twofin_velocity.png" loading="lazy" alt="Heat exchanger two fin velocity streamlines" />
+    <img src="/images/heatexchanger_twofin_temp1.png" loading="lazy" alt="Heat exchanger two fin temperature contours" />
+    <img src="/images/heatexchanger_twofin_temp2.png" loading="lazy" alt="Heat exchanger two fin temperature contours" />
+    <img src="/images/heatexchanger_twofin_oil_pressure.png" loading="lazy" alt="Heat exchanger two fin oil pressure contours" />
+    <img src="/images/heatexchanger_twofin_air_pressure.png" loading="lazy" alt="Heat exchanger two fin air pressure contours" />
+  </div>
+  <em>Summary of two-fin simulation velocity streamline results (upper left), temperature contour results (upper middle/right), oil pressure contour results (lower left), and air pressure contour results (lower middle).</em>
+</div>
+
+<p><br /></p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<div class="gallery-box">
+  <div class="gallery_three">
+    <img src="/images/heatexchanger_twotube_oil_velocity.png" loading="lazy" alt="Heat exchanger tube bank oil velocity streamlines" />
+    <img src="/images/heatexchanger_twotube_air_velocity.png" loading="lazy" alt="Heat exchanger tube bank air velocity streamlines" />
+    <img src="/images/heatexchanger_twotube_temp1.png" loading="lazy" alt="Heat exchanger tube bank temperature contours" />
+    <img src="/images/heatexchanger_twotube_temp2.png" loading="lazy" alt="Heat exchanger tube bank temperature contours" />
+    <img src="/images/heatexchanger_twotube_oil_pressure.png" loading="lazy" alt="Heat exchanger tube bank oil velocity streamlines" />
+    <img src="/images/heatexchanger_twotube_air_pressure.png" loading="lazy" alt="Heat exchanger tube bank air velocity streamlines" />
+  </div>
+  <em>Summary of tube bank simulation oil velocity streamline results (upper left), air velocity streamline results (upper right), temperature contour results (upper right/lower left), oil pressure contour results (lower middle), and air pressure contour results (lower right).</em>
+</div>
+
+<p>A 55-page report further detailing the operating metrics, design hand calculations, all CFD simulations, and fully dimensioned design drawings can be found <a href="/pdfs/ME407_Midterm_Report.pdf" target="_blank">here</a>.</p>
+                </div>
+                  
+              </div>
+          
+      
+          
+      
+    </div>
+
+  </div>
+
+  <section class="section section-related">
+    <div class="section__info section__info__center">
+      <div class="section__head">
+        <h2 class="section__title">See other projects</h2>
+      </div>
+    </div>
+
+    <div class="row">
+    
+    
+    
+      
+      <article class="project col col-4 col-d-6 col-t-12">
+        <div class="project__content">
+          <a href="/portfolio/reu" class="project__image">
+            
+            <img class="lazy" data-src="/images/piv_cover_photo.png" alt="REU - PIV/CFD Study of Tumble Generation in a Pent-Roof Internal Combustion Engine">
+          </a>
+          <div class="project__info">
+            
+            <div class="project__label">Summer 2018</div>
+            
+            
+            <h3 class="project__title"><a class="project__link" href="/portfolio/reu">REU - PIV/CFD Study of Tumble Generation in a Pent-Roof Internal Combustion Engine</a></h3>
+            
+          </div>
         </div>
-      </div>
-
-      <div class="row">
+      </article>
       
       
-
       
-        
+    
       
-        
-        
-        <article class="project col col-4 col-d-6 col-t-12">
-          <div class="project__content">
-            <a href="/portfolio/reu" class="project__image">
-              
-              <img class="lazy" data-src="/images/piv_cover_photo.png" alt="REU - PIV/CFD Study of Tumble Generation in a Pent-Roof Internal Combustion Engine">
-            </a>
-            <div class="project__info">
-              
-              <div class="project__label">Summer 2018</div>
-              
-              
-              <h3 class="project__title"><a class="project__link" href="/portfolio/reu">REU - PIV/CFD Study of Tumble Generation in a Pent-Roof Internal Combustion Engine</a></h3>
-              
-              
-              <div class="project__description">Using particle image velocimetry and CFD modeling techniques to validate and predict airflow patterns in an internal combustion engine</div>
-              
-            </div>
+      <article class="project col col-4 col-d-6 col-t-12">
+        <div class="project__content">
+          <a href="/portfolio/turducken-thermal-analysis" class="project__image">
+            
+            <img class="lazy" data-src="/images/turducken_mesh_iso.png" alt="Turducken Thermal Design and Analysis">
+          </a>
+          <div class="project__info">
+            
+            <div class="project__label">Fall 2017</div>
+            
+            
+            <h3 class="project__title"><a class="project__link" href="/portfolio/turducken-thermal-analysis">Turducken Thermal Design and Analysis</a></h3>
+            
           </div>
-        </article>
-        
+        </div>
+      </article>
       
-        
       
-        
-        
-        <article class="project col col-4 col-d-6 col-t-12">
-          <div class="project__content">
-            <a href="/portfolio/axial-flow-compressor-analysis" class="project__image">
-              
-              <img class="lazy" data-src="/images/compressor_stage_iso.png" alt="Axial Flow Compressor Design and CFD Analysis">
-            </a>
-            <div class="project__info">
-              
-              <div class="project__label">Spring 2018</div>
-              
-              
-              <h3 class="project__title"><a class="project__link" href="/portfolio/axial-flow-compressor-analysis">Axial Flow Compressor Design and CFD Analysis</a></h3>
-              
-              
-              <div class="project__description">Designing an axial flow compressor in SolidWorks and evaluating its performance with a transient CFD analysis in ANSYS Fluent</div>
-              
-            </div>
+      
+    
+      
+      <article class="project col col-4 col-d-6 col-t-12">
+        <div class="project__content">
+          <a href="/portfolio/traction-circle" class="project__image">
+            
+            <img class="lazy" data-src="/images/traction_coilover_wide.png" alt="Measuring the Traction Limits and Suspension Forces of a Formula SAE Racecar">
+          </a>
+          <div class="project__info">
+            
+            <div class="project__label">Spring 2018</div>
+            
+            
+            <h3 class="project__title"><a class="project__link" href="/portfolio/traction-circle">Measuring the Traction Limits and Suspension Forces of a Formula SAE Racecar</a></h3>
+            
           </div>
-        </article>
-        
+        </div>
+      </article>
+      
       
         
-        
-        <article class="project col col-4 col-d-6 col-t-12">
-          <div class="project__content">
-            <a href="/portfolio/heat-exchanger-analysis" class="project__image">
-              
-              <img class="lazy" data-src="/images/heatexchanger_front.png" alt="Heat Exchanger Design and CFD Analysis">
-            </a>
-            <div class="project__info">
-              
-              <div class="project__label">Spring 2018</div>
-              
-              
-              <h3 class="project__title"><a class="project__link" href="/portfolio/heat-exchanger-analysis">Heat Exchanger Design and CFD Analysis</a></h3>
-              
-              
-              <div class="project__description">Designing an automotive heat exchanger in SolidWorks and evaluating its performance with a steady-state CFD analysis in ANSYS Fluent</div>
-              
-            </div>
-          </div>
-        </article>
-        
-      
-        
-        
-        <article class="project col col-4 col-d-6 col-t-12">
-          <div class="project__content">
-            <a href="/portfolio/turducken-thermal-analysis" class="project__image">
-              
-              <img class="lazy" data-src="/images/turducken_mesh_iso.png" alt="Turducken Thermal Design and Analysis">
-            </a>
-            <div class="project__info">
-              
-              <div class="project__label">Fall 2017</div>
-              
-              
-              <h3 class="project__title"><a class="project__link" href="/portfolio/turducken-thermal-analysis">Turducken Thermal Design and Analysis</a></h3>
-              
-              
-              <div class="project__description">Designing a turducken cooking system in SolidWorks and evaluating its performance with a transient thermal analysis in ANSYS Workbench</div>
-              
-            </div>
-          </div>
-        </article>
-        
-      
-      </div>
     </div>
-  </div>
-</section>
-<!-- end featured section -->
+  </section>
+
+</div>
 
   </main>
   <!-- end content -->

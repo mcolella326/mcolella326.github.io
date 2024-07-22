@@ -4,7 +4,7 @@ date: 2018-04-02
 label: Spring 2018
 description: Designing an automotive heat exchanger in SolidWorks and evaluating its performance with a steady-state CFD analysis in ANSYS Fluent
 image: '/images/heatexchanger_front.png'
-featured:
+featured: true
 timeline: Spring 2018
 tools: ANSYS Fluent, SolidWorks, Excel
 medias:

@@ -1,25 +1,59 @@
 ---
 layout: default
-title: Portfolio | Michael Colella
+title: Michael Colella
+image: '/images/colella.jpg'
 ---
 
 <div class="container">
-  <div class="page-section-head">
-    <h1 class="page-title">{% if page.title %}{{ page.title | split: "|" | first}}{% else %}{{ site.data.settings.projects.projects_title }}{% endif %}</h1>
-    {% if page.description %}
-    <p class="page-description">{{ page.description }}</p>
-    {% else site.data.settings.projects.projects_description %}
-    <p class="page-description">{{ site.data.settings.projects.projects_description }}</p>
-    {% endif %}
+  <div class="page__head">
+    <div class="page__info">
+      {% if page.title %}
+      <h1 class="page__title">Welcome to my portfolio!</h1>
+      {% endif %}
+      {% if page.description %}
+      <p class="page__description">{{ page.description }}</p>
+      {% else site.data.settings.projects.projects_description %}
+      <p class="page__description">{{ site.data.settings.projects.projects_description }}</p>
+      {% endif %}
+    </div>
   </div>
 </div>
 
-<!-- begin projects -->
+<!-- begin page -->
+<article class="page">
+  <div class="page__content">
+    <div class="page__text">
+      <p>Hi! My name is Michael. I'm a mechanical engineer at Simpson Gumpertz & Heger, where I provide design and analysis assistance using computational fluid dynamics for large-scale facilities like fission and fusion reactors, airports, museums, and wastewater treatment plants. I am a professional engineer licensed in New York.</p>
+      <p>I graduated from Cooper Union with a Bachelor's in mechanical engineering. As an undergraduate, I had assisted in the design, analysis, and manufacturing of racecars for my college's FSAE team, where I led the Frame subdivision for three years.</p>
+      <p>My professional interests include thermal design and analysis, fluid mechanics, and manufacturing. In my free time, I'm typically 3D printing, working on side projects, or scheduling way too many board game nights with friends.</p>
+      <p>Contact me by email <a href="mailto:mcolella326@gmail.com">here</a>. Feel free to get in touch if you have any questions about my work or résumé!</p>
+    </div>
+    <div class="page-image">
+      <img class="lazy" data-src="{{site.baseurl}}{{page.image}}" alt="{{page.title}}" loading="lazy">
+    </div>
+  </div>
+</article>
+<!-- end page -->
+
+<!-- begin featured section -->
 <section class="section projects animate">
   <div class="container">
     <div class="container__inner">
+
+      <div class="section__info">
+        <div class="section__head">
+          <h2 class="section__title">Featured Projects</h2>
+          <a class="section__link" href="{{ '/portfolio' | relative_url }}">View all <i class="fa-solid fa-chevron-right"></i></a>
+        </div>
+      </div>
+
       <div class="row">
-        {% for project in site.projects reversed %}
+      {% assign sorted = site.projects | sort: 'date' | reverse %}
+      {% assign displayed_projects = 0 %}
+
+      {% for project in sorted %}
+        {% unless project.featured != true %}
+        {% assign displayed_projects = displayed_projects | plus: 1 %}
         <article class="project col col-4 col-d-6 col-t-12">
           <div class="project__content">
             <a href="{{ project.url }}" class="project__image">
@@ -45,9 +79,10 @@ title: Portfolio | Michael Colella
             </div>
           </div>
         </article>
-        {% endfor %}
+        {% endunless %}
+      {% endfor %}
       </div>
     </div>
   </div>
 </section>
-<!-- end projects -->
+<!-- end featured section -->

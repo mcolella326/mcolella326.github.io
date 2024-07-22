@@ -1,11 +1,12 @@
 ---
 layout: default
 title: Portfolio | Michael Colella
+permalink: '/portfolio/'
 ---
 
 <div class="container">
   <div class="page-section-head">
-    <h1 class="page-title">{% if page.title %}{{ page.title }}{% else %}{{ site.data.settings.projects.projects_title }}{% endif %}</h1>
+    <h1 class="page-title">{% if page.title %}{{ page.title | split: "|" | first }}{% else %}{{ site.data.settings.projects.projects_title }}{% endif %}</h1>
     {% if page.description %}
     <p class="page-description">{{ page.description }}</p>
     {% else site.data.settings.projects.projects_description %}
@@ -38,6 +39,9 @@ title: Portfolio | Michael Colella
               {% endif %}
               {% if project.title %}
               <h3 class="project__title"><a class="project__link" href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+              {% endif %}
+              {% if project.description %}
+              <div class="project__description">{{ project.description }}</div>
               {% endif %}
             </div>
           </div>

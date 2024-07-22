@@ -6,10 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Michael Colella</title>
-  <meta name='description' content='A collection of projects and experiences from Michael Colella'>
+  <title>Turducken Thermal Design and Analysis</title>
+  <meta name='description' content='Designing a turducken cooking system in SolidWorks and evaluating its performance with a transient thermal analysis in ANSYS Workbench'>
 
-  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="canonical" href="http://localhost:4000/portfolio/turducken-thermal-analysis">
   <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
 
   <!-- Fonts -->
@@ -47,7 +47,7 @@
   </style>
 </head>
 
-<body class="home-page">
+<body class="">
 
   <!-- begin header -->
 <header class="header">
@@ -70,7 +70,7 @@
               
               
               <li class="nav__item">
-                <a href="/" class="nav__link active-link">Home</a>
+                <a href="/" class="nav__link">Home</a>
               </li>
               
               
@@ -106,152 +106,329 @@
   <!-- begin content -->
   <main class="content" aria-label="Content">
     <div class="container">
-  <div class="page__head">
-    <div class="page__info">
+
+  <div class="project-content">
+
+    <div class="project-info">
       
-      <h1 class="page__title">Welcome to my portfolio!</h1>
-      
-      
-      <p class="page__description"></p>
+      <h1 class="project-title">Turducken Thermal Design and Analysis</h1>
       
     </div>
+
+    <div class="project-head">
+      
+      
+      <div class="project-image">
+        <img class="lazy" data-src="/images/turducken_mesh_iso.png" alt="Turducken Thermal Design and Analysis">
+      </div>
+      <div class="project-intro">
+        <p><strong>Timeline:</strong><br>Fall 2017</p>
+        <p><strong>Tools used:</strong><br>ANSYS Workbench, Altair Hypermesh, SolidWorks, MATLAB</p>
+      </div>
+      
+      
+    </div>
+
+    <div class="content-container">
+      
+      
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-70">
+                  <h1 id="background">Background</h1>
+
+<p>The final project for Cooper Union’s Introduction to Computer Aided Engineering (CAE) course split the class into 4-person teams to analyze the cooking process for a turducken using a convection oven and two resistive heating skewers. The turducken consists of 3 layers: an outer layer of only turkey, a middle layer consisting of a homogeneous mixture of duck and chicken, and an inner layer of a team-selected stuffing. The goal of this project is to minimize the amount of time taken to “fully cook” the turducken (minimum temperature of 185°F) while also minimizing the percentage of “burnt” turducken (minimum temperature of 265°F). We performed a transient thermal analysis on the turducken using ANSYS Workbench and validated our results with a simplified hand calculation.</p>
+                </div>
+                  
+                    
+                      <div class="image-content">
+                          <img src="/images/turducken_cross_section.png" alt="Image related to paragraph 0">
+                          <em>Turducken geometry: turkey layer in orange, duck/chicken layer in gray, and stuffing layer in blue.</em>
+                      </div>
+                    
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<p>Each team is provided with the same turducken geometry, restrictions on the temperature criteria, and design limitations for the skewers and oven. The assignment with all applicable rules is attached <a href="/pdfs/ME408_Final_Fall_2017.pdf" target="_blank">here</a>.</p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-70">
+                  
+
+<h1 id="setup-and-mesh">Setup and Mesh</h1>
+
+<p>Our team used a simple pointed rod design for the skewers, placing them through the thickest segments of the turducken as these were the areas with the highest thermal capacitance. Using the 2006 ASHRAE Refrigeration Handbook, we determined the relevant thermal conductivity, density, and specific heat for each material as a function of temperature, weighting homogeneous mixtures gravimetrically for specific heat and volumetrically for thermal conductivity and density. We additionally accounted for the changes in these properties as the water in each material evaporated out and as each material burned.</p>
+                </div>
+                  
+                    
+                      <div class="image-content">
+                          <img src="/images/turducken_mesh_side.png" alt="Image related to paragraph 2">
+                          <em>Turducken mesh.</em>
+                      </div>
+                    
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<div class="gallery-box">
+  <div class="gallery_two">
+    <img src="/images/turducken_side.png" loading="lazy" alt="Turducken side view with skewers" />
+    <img src="/images/turducken_rear.png" loading="lazy" alt="Turducken rear view with skewers" />
   </div>
+  <em>Turducken with skewers side and rear views.</em>
 </div>
 
-<!-- begin page -->
-<article class="page">
-  <div class="page__content">
-    <div class="page__text">
-      <p>Hi! My name is Michael. I'm a mechanical engineer at Simpson Gumpertz & Heger, where I provide design and analysis assistance using computational fluid dynamics for large-scale facilities like fission and fusion reactors, airports, museums, and wastewater treatment plants. I am a professional engineer licensed in New York.</p>
-      <p>I graduated from Cooper Union with a Bachelor's in mechanical engineering. As an undergraduate, I had assisted in the design, analysis, and manufacturing of racecars for my college's FSAE team, where I led the Frame subdivision for three years.</p>
-      <p>My professional interests include thermal design and analysis, fluid mechanics, and manufacturing. In my free time, I'm typically 3D printing, working on side projects, or scheduling way too many board game nights with friends.</p>
-      <p>Contact me by email <a href="mailto:mcolella326@gmail.com">here</a>. Feel free to get in touch if you have any questions about my work or résumé!</p>
-    </div>
-    <div class="page-image">
-      <img class="lazy" data-src="/images/colella.jpg" alt="Michael Colella" loading="lazy">
-    </div>
+<p>We split the turducken in half along the turducken vertical midplane due to geometric and thermal symmetry in the analysis, significantly reducing our mesh size and solve time. All convection coefficients and emissive properties were approximated from online research based on similar studies in standard convection ovens as physical experimentation and CFD methods were outside the scope of this analysis.</p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<div class="gallery-box">
+  <div class="gallery_two">
+    <img src="/images/turducken_bcs.png" loading="lazy" alt="Turducken boundary conditions" />
   </div>
-</article>
-<!-- end page -->
+  <em>Turducken boundary conditions.</em>
+</div>
 
-<!-- begin featured section -->
-<section class="section projects animate">
-  <div class="container">
-    <div class="container__inner">
+<p>We used Altair Hypermesh to slice the stuffing, ducken, wing, and skewer to allow for mapped hexahedral meshing where possible. Because the turkey is not as easily mappable, we opted to use a hexcore mesh primarily for mesh space efficiency. Where hexahedral elements could not be used, we used smaller tetrahedral elements, notably at locations where we expected higher temperature gradients (e.g., around the skewer). The mesh had a total element count of approximately 495,000. All elements were element type SOLID70.</p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
 
-      <div class="section__info">
-        <div class="section__head">
-          <h2 class="section__title">Featured Projects</h2>
-          <a class="section__link" href="/portfolio">View all <i class="fa-solid fa-chevron-right"></i></a>
+<h1 id="validation">Validation</h1>
+
+<p>To validate the results obtained by the model, we created an equivalent transient thermal RC circuit to capture the rise in temperature at nodes across the turducken. The model treats the turducken as a set of concentric spheres, lumping the resistive and capacitive effects for each layer. The skewer is treated as a current source that is turned on and off at specific times in the analysis. The resulting coupled ODEs are assembled in MATLAB and are solved concurrently using Forward Euler numerical methods.</p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<p><img src="/images/turducken_thermal_circuit.png" alt="Turducken Thermal Circuit" />
+<em>Turducken thermal circuit.</em></p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<p>Hand calculation results indicate that the skewers should remain on for approximately 4.25 hours before being shut off to minimize the percentage of burnt turducken while drastically reducing cooking time.</p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-70">
+                  
+
+<h1 id="results">Results</h1>
+
+<p>Our model results show close agreement with the hand calculations (maximum ~20% difference). Results indicate that, if the skewers are left on for 4.25 hours and if the turducken is left in the oven for 6.25 hours, the turducken is only 39% burnt. Compared to a similar analysis without the skewers, the turducken with skewers is 20% less burnt and needs about 6 fewer hours in the oven.</p>
+                </div>
+                  
+                    
+                      <div class="video-content">
+                        <video controls width="100%">
+                          <source src="/videos/turducken_animation.mp4" type="video/mp4">
+                          Your browser does not support the video tag.
+                        </video>
+                        <em>Turducken heating animation.</em>
+                      </div>
+                    
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<p><img src="/images/turducken_hand_calc_and_analysis.png" alt="Hand calculation heating results" />
+<em>Hand calculation results compared to analysis results: solid lines represent ANSYS simulation results, and dashed lines represent hand calculation results.</em></p>
+                </div>
+                  
+              </div>
+          
+      
+          
+            
+            
+            
+              <div class="paragraph-container">
+                <div class="text-content text-basis-full">
+                  
+
+<div class="gallery-box">
+  <div class="gallery_two">
+    <img src="/images/turducken_hour1.png" loading="lazy" alt="Turducken temperature after 1 hour in the oven" />
+    <img src="/images/turducken_hour3.png" loading="lazy" alt="Turducken temperature after 3 hours in the oven" />
+    <img src="/images/turducken_hour5.png" loading="lazy" alt="Turducken temperature after 5 hours in the oven" />
+    <img src="/images/turducken_hour6.png" loading="lazy" alt="Turducken temperature after 6.25 hours in the oven" />
+  </div>
+  <em>Turducken temperature after 1 hour (upper left), 3 hours (upper right), 5 hours (lower left), and 6.25 hours (lower right) in the oven.</em>
+</div>
+
+<p>A 52-page report further detailing the hand calculation, model, skewer design, and cooking instructions can be found <a href="/pdfs/ME408_Final_Report.pdf" target="_blank">here</a>.</p>
+                </div>
+                  
+              </div>
+          
+      
+          
+      
+    </div>
+
+  </div>
+
+  <section class="section section-related">
+    <div class="section__info section__info__center">
+      <div class="section__head">
+        <h2 class="section__title">See other projects</h2>
+      </div>
+    </div>
+
+    <div class="row">
+    
+    
+    
+      
+      <article class="project col col-4 col-d-6 col-t-12">
+        <div class="project__content">
+          <a href="/portfolio/axial-flow-compressor-analysis" class="project__image">
+            
+            <img class="lazy" data-src="/images/compressor_stage_iso.png" alt="Axial Flow Compressor Design and CFD Analysis">
+          </a>
+          <div class="project__info">
+            
+            <div class="project__label">Spring 2018</div>
+            
+            
+            <h3 class="project__title"><a class="project__link" href="/portfolio/axial-flow-compressor-analysis">Axial Flow Compressor Design and CFD Analysis</a></h3>
+            
+          </div>
         </div>
-      </div>
-
-      <div class="row">
+      </article>
       
       
-
       
-        
+    
       
-        
-        
-        <article class="project col col-4 col-d-6 col-t-12">
-          <div class="project__content">
-            <a href="/portfolio/reu" class="project__image">
-              
-              <img class="lazy" data-src="/images/piv_cover_photo.png" alt="REU - PIV/CFD Study of Tumble Generation in a Pent-Roof Internal Combustion Engine">
-            </a>
-            <div class="project__info">
-              
-              <div class="project__label">Summer 2018</div>
-              
-              
-              <h3 class="project__title"><a class="project__link" href="/portfolio/reu">REU - PIV/CFD Study of Tumble Generation in a Pent-Roof Internal Combustion Engine</a></h3>
-              
-              
-              <div class="project__description">Using particle image velocimetry and CFD modeling techniques to validate and predict airflow patterns in an internal combustion engine</div>
-              
-            </div>
+      <article class="project col col-4 col-d-6 col-t-12">
+        <div class="project__content">
+          <a href="/portfolio/heat-exchanger-analysis" class="project__image">
+            
+            <img class="lazy" data-src="/images/heatexchanger_front.png" alt="Heat Exchanger Design and CFD Analysis">
+          </a>
+          <div class="project__info">
+            
+            <div class="project__label">Spring 2018</div>
+            
+            
+            <h3 class="project__title"><a class="project__link" href="/portfolio/heat-exchanger-analysis">Heat Exchanger Design and CFD Analysis</a></h3>
+            
           </div>
-        </article>
-        
+        </div>
+      </article>
       
-        
       
-        
-        
-        <article class="project col col-4 col-d-6 col-t-12">
-          <div class="project__content">
-            <a href="/portfolio/axial-flow-compressor-analysis" class="project__image">
-              
-              <img class="lazy" data-src="/images/compressor_stage_iso.png" alt="Axial Flow Compressor Design and CFD Analysis">
-            </a>
-            <div class="project__info">
-              
-              <div class="project__label">Spring 2018</div>
-              
-              
-              <h3 class="project__title"><a class="project__link" href="/portfolio/axial-flow-compressor-analysis">Axial Flow Compressor Design and CFD Analysis</a></h3>
-              
-              
-              <div class="project__description">Designing an axial flow compressor in SolidWorks and evaluating its performance with a transient CFD analysis in ANSYS Fluent</div>
-              
-            </div>
+      
+    
+      
+    
+      
+      <article class="project col col-4 col-d-6 col-t-12">
+        <div class="project__content">
+          <a href="/portfolio/traction-circle" class="project__image">
+            
+            <img class="lazy" data-src="/images/traction_coilover_wide.png" alt="Measuring the Traction Limits and Suspension Forces of a Formula SAE Racecar">
+          </a>
+          <div class="project__info">
+            
+            <div class="project__label">Spring 2018</div>
+            
+            
+            <h3 class="project__title"><a class="project__link" href="/portfolio/traction-circle">Measuring the Traction Limits and Suspension Forces of a Formula SAE Racecar</a></h3>
+            
           </div>
-        </article>
-        
+        </div>
+      </article>
+      
       
         
-        
-        <article class="project col col-4 col-d-6 col-t-12">
-          <div class="project__content">
-            <a href="/portfolio/heat-exchanger-analysis" class="project__image">
-              
-              <img class="lazy" data-src="/images/heatexchanger_front.png" alt="Heat Exchanger Design and CFD Analysis">
-            </a>
-            <div class="project__info">
-              
-              <div class="project__label">Spring 2018</div>
-              
-              
-              <h3 class="project__title"><a class="project__link" href="/portfolio/heat-exchanger-analysis">Heat Exchanger Design and CFD Analysis</a></h3>
-              
-              
-              <div class="project__description">Designing an automotive heat exchanger in SolidWorks and evaluating its performance with a steady-state CFD analysis in ANSYS Fluent</div>
-              
-            </div>
-          </div>
-        </article>
-        
-      
-        
-        
-        <article class="project col col-4 col-d-6 col-t-12">
-          <div class="project__content">
-            <a href="/portfolio/turducken-thermal-analysis" class="project__image">
-              
-              <img class="lazy" data-src="/images/turducken_mesh_iso.png" alt="Turducken Thermal Design and Analysis">
-            </a>
-            <div class="project__info">
-              
-              <div class="project__label">Fall 2017</div>
-              
-              
-              <h3 class="project__title"><a class="project__link" href="/portfolio/turducken-thermal-analysis">Turducken Thermal Design and Analysis</a></h3>
-              
-              
-              <div class="project__description">Designing a turducken cooking system in SolidWorks and evaluating its performance with a transient thermal analysis in ANSYS Workbench</div>
-              
-            </div>
-          </div>
-        </article>
-        
-      
-      </div>
     </div>
-  </div>
-</section>
-<!-- end featured section -->
+  </section>
+
+</div>
 
   </main>
   <!-- end content -->
