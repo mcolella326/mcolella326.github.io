@@ -175,6 +175,7 @@
   max-width: 1332px;
   margin: 0 auto 48px;
   color: var(--text-color);
+  padding-left: calc(16px*2);
 
   a {
     text-decoration: underline;
@@ -230,6 +231,7 @@
 
 .page__text {
   flex-basis: 50%;
+  padding-right: calc(16px*2);
 }
 
 .post__info {
