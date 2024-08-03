@@ -11,11 +11,11 @@ medias:
 ---
 # Background
 
-The goal of this project was to use an onboard data acquisition system to better determine the loading distribution in the Cooper Union Formula SAE racecar suspension system throughout a typical autocross event. Each corner of the vehicle was equipped with a coilover-linear potentiometer system; the force exerted on each suspension member was determined by using real-time displacement data in conjunction with the spring constant and damper coefficient for each coilover. Using these suspension forces, we determined the force exerted on each tire and used this value as a baseline to improve suspension system effectiveness. Additionally, a traction circle (a plot showing the extents of lateral and longitudinal acceleration of the vehicle throughout the autocross event) was generated for a set of drivers and was used to identify weak areas among drivers and to compare actual vehicle performance relative to design constraints.
+The goal of this project was to utilize an onboard data acquisition system to accurately determine the loading distribution in the Cooper Union Formula SAE racecar suspension system during a typical autocross event. Each corner of the vehicle was equipped with a coilover-linear potentiometer system; the force exerted on each suspension member was calculated using real-time displacement data along with the spring constant and damper coefficient for each coilover. Using these suspension forces, we determined the force exerted on each tire and used this value as a baseline to enhance suspension system effectiveness. Additionally, a traction circle (a plot showing the extents of lateral and longitudinal acceleration of the vehicle during the autocross event) was generated for a set of drivers to identify weak areas among drivers and compare actual vehicle performance relative to design constraints.
 
 # Project Description
 
-We characterized the suspension performance of the 2018 Cooper Motorsports FSAE vehicle under accelerating, braking, and cornering conditions by placing linear potentiometers alongside the coilover shocks of the suspension system and recording their deflections during a test autocross event. These deflections were used to calculate the movement of the suspension system. Using known spring and damping coefficients, we calculated the force through the spring-damper system, which can then be used to calculate the weight on the tires. Understanding these loads is essential to minimize the weight of the suspension system. Furthermore, understanding how loads are distributed throughout the suspension system can help with structural integrity and make suspension theory easier to apply for future vehicles.
+We characterized the suspension performance of the 2018 Cooper Motorsports FSAE vehicle under accelerating, braking, and cornering conditions by placing linear potentiometers alongside the coilover shocks of the suspension system and recording their deflections during a test autocross event. These deflections were used to calculate the movement of the suspension system. Using known spring and damping coefficients, we calculated the force through the spring-damper system, which was then used to determine the weight on the tires. Understanding these loads was essential for minimizing the weight of the suspension system and ensuring its structural integrity. This knowledge also aided in applying suspension theory to future vehicle designs.
 
 <div class="gallery-box">
   <div class="gallery_two">
@@ -24,7 +24,7 @@ We characterized the suspension performance of the 2018 Cooper Motorsports FSAE 
   <em>2018 Cooper Motorsports FSAE vehicle coilover shock locations (highlighted in orange).</em>
 </div>
 
-The coilover model used already had a fixed specification for the spring constant. The damper coefficient was determined via manufacturer damper curves.
+The coilover model used already had a fixed specification for the spring constant. The damper coefficient was determined using manufacturer-provided damper curves.
 
 <div class="gallery-box">
   <div class="gallery_two">
@@ -35,7 +35,7 @@ The coilover model used already had a fixed specification for the spring constan
 
 # Experimental Setup
 
-A set of PZ-12-A-75P linear potentiometers with a 75mm stroke was used to determine the forces in the suspension system. An AiM Evo 4 data logger with an onboard accelerometer and GPS and a sampling rate of 10 Hz was used to acquire traction circle data.
+A set of PZ-12-A-75P linear potentiometers with a 75mm stroke was used to measure the forces in the suspension system. An AiM Evo 4 data logger with an onboard accelerometer and GPS and a sampling rate of 10 Hz was used to acquire traction circle data.
 
 <div class="gallery-box">
   <div class="gallery_two">
@@ -54,7 +54,7 @@ A set of PZ-12-A-75P linear potentiometers with a 75mm stroke was used to determ
   <em>Data logger mounting (highlighted in orange).</em>
 </div>
 
-Each linear potentiometer was calibrated beforehand by supplying the potentiometers with a fixed voltage and recording the voltage output at set extension lengths under both lengthening and shortening events to account for hysteresis. Calibration results and error bars indicated reliable and repeatable behavior without any discernible hysteresis.
+Each linear potentiometer was calibrated by supplying the potentiometers with a fixed voltage and recording the voltage output under both lengthening and shortening events to account for hysteresis. Calibration results and error bars indicated reliable and repeatable behavior without any discernible hysteresis.
 
 <div class="gallery-box">
   <div class="gallery_two">
@@ -75,7 +75,7 @@ Each linear potentiometer was calibrated beforehand by supplying the potentiomet
 
 # Results
 
-The data logger recorded data for five different drivers on an autocross, acceleration, and skidpad course. Acceleration data recorded from the autocross course was used to produce traction circles for the two drivers who drove that course. A comparison between the two drivers' traction circles indicates that, while the two drivers had similar lateral accelerations, Driver One was capable of achieving higher longitudinal accelerations. This analysis suggest that Driver Two is not at the limits of the car's longitudinal acceleration and as room for improvement in the autocross event.
+The data logger recorded data for five different drivers on autocross, acceleration, and skidpad courses. Acceleration data from the autocross course was used to produce traction circles for the two drivers who drove that course. A comparison between the two drivers' traction circles indicated that, while both drivers had similar lateral accelerations, Driver One achieved higher longitudinal accelerations. This suggested that Driver Two had room for improvement in maximizing the vehicle's longitudinal acceleration during the autocross event.
 
 <div class="gallery-box">
   <div class="gallery_three">
@@ -86,7 +86,7 @@ The data logger recorded data for five different drivers on an autocross, accele
   <em>Traction circle for Driver One (left), traction circle for Driver Two (middle), and traction circle comparison between drivers (right).</em>
 </div>
 
-By combining the data from all five drivers, the resulting traction circle demonstrates the overall performance the vehicle is capable of relative to the five drivers who participated in the driving event. The overall traction circle shows a maximum lateral acceleration of approximately 1.5 g's, which agrees with the predicted maximum lateral acceleration used to design the 2018 vehicle's suspension.
+By combining the data from all five drivers, the resulting traction circle demonstrated the overall performance the vehicle was capable of relative to the five drivers who participated in the driving event. The overall traction circle showed a maximum lateral acceleration of approximately 1.5 g's, which aligned with the predicted maximum lateral acceleration used in designing the 2018 vehicle's suspension.
 
 <div class="gallery-box">
   <div class="gallery_two">
@@ -106,4 +106,4 @@ Data from the linear potentiometers was analyzed for the skidpad course. We dete
   <em>With linear potentiometer results, we approximated the weight on the front tires (left), the weight on the rear tires (middle), and the lateral force experienced by the right tires (right) along the skidpad course.</em>
 </div>
 
-A 40-page paper published by the American Society for Engineering Education further detailing the course that allowed us the opportunity to obtain this data, sensor selection justification, and a full description of how the traction circle was generated can be found <a href="https://peer.asee.org/measuring-the-traction-limits-and-suspension-forces-of-a-formula-sae-racecar" target="_blank">here</a>.
+A 40-page paper published by the American Society for Engineering Education further detailing the course that allowed us to obtain this data, sensor selection justification, and a full description of how the traction circle was generated can be found <a href="https://peer.asee.org/measuring-the-traction-limits-and-suspension-forces-of-a-formula-sae-racecar" target="_blank">here</a>.

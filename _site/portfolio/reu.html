@@ -141,7 +141,7 @@
                 <div class="text-content text-basis-full">
                   <h1 id="background">Background</h1>
 
-<p>The goal of this project was to use a fully-validated CFD model to predict airflow patterns and levels of in-cylinder tumble (flow rotation about an axis perpendicular to the cylinder axis) in a 2.4-liter Chrysler Cirrus engine cylinder when the intake port is modified in the CFD model. To validate this model, I used particle image velocimetry (PIV) on a portion of an acrylic cylinder to visualize airflow when the intake valves are set to fixed valve lift to valve diameter ratios. Upon obtaining airflow velocity vector profiles using both PIV and CFD, I directly compared the overall error in vector magnitude and angle using root mean squared error and cosine similarity, respectively. Additionally, I calculated the nondimensional tumble number (the ratio of total angular momentum in the cylinder to the maximum total angular momentum in the cylinder) for both PIV and CFD results for comparison.</p>
+<p>The goal of this project was to use a fully-validated CFD model to predict airflow patterns and levels of in-cylinder tumble (flow rotation about an axis perpendicular to the cylinder axis) in a 2.4-liter Chrysler Cirrus engine cylinder when the intake port is modified in the CFD model. To validate this model, I used particle image velocimetry (PIV) on a portion of an acrylic cylinder to visualize airflow when the intake valves were set to fixed valve lift to valve diameter ratios. Upon obtaining airflow velocity vector profiles using both PIV and CFD, I directly compared the overall error in vector magnitude and angle using root mean squared error and cosine similarity, respectively. Additionally, I calculated the nondimensional tumble number (the ratio of total angular momentum in the cylinder to the maximum total angular momentum in the cylinder) for both PIV and CFD results for comparison.</p>
                 </div>
                   
               </div>
@@ -155,7 +155,7 @@
                 <div class="text-content text-basis-full">
                   
 
-<p>This project was part of a Research Experience for Undergraduates (REU) experience under the purview of Dr. Paul Puzinauskas and PhD student Alex Voris.</p>
+<p>This project was part of a Research Experience for Undergraduates (REU) under the supervision of Dr. Paul Puzinauskas and PhD student Alex Voris.</p>
                 </div>
                   
               </div>
@@ -171,7 +171,7 @@
 
 <h1 id="experimental-model-and-results">Experimental Model and Results</h1>
 
-<p>The PIV setup consisted of a CCD camera, a Nd:YAG pulsed laser, a SuperFlow SF-1020 flow bench, an engine head with the exhaust ports sealed, and an acrylic cylinder with the side exposed to the pulsed laser shaved flat to mitigate unwanted scattering. The camera was synchronized with the laser to capture images of the velocity field. The flow was seeded with talcum powder particulates; I tracked the particulates and obtained velocity vectors as a function of position using LaVision’s DaVis 7.2 PIV software. All tests were performed under a constant pressure differential of 25 inches of water.</p>
+<p>The PIV setup consisted of a CCD camera, a Nd:YAG pulsed laser, a SuperFlow SF-1020 flow bench, an engine head with the exhaust ports sealed, and an acrylic cylinder with the side exposed to the pulsed laser shaved flat to mitigate unwanted scattering. The camera was synchronized with the laser to capture images of the velocity field. The flow was seeded with talcum powder particulates; these particulates were tracked to obtain velocity vectors as a function of position using LaVision’s DaVis 7.2 PIV software. All tests were performed under a constant pressure differential of 25 inches of water.</p>
                 </div>
                   
               </div>
@@ -235,7 +235,7 @@
   <em>Chrysler Cirrus engine head with intake valves as used in the PIV study. Note that the exhaust ports are sealed throughout the PIV study.</em>
 </div>
 
-<p>I used a multi-pass iteration scheme (a 64x64 pixel interrogation window followed by a 32x32 pixel interrogation window) to increase resolution of the computed vector field. I applied a median filter to the interrogation area to eliminate vectors with a difference of greater than 3 RMS of neighboring vectors. Additionally, I applied a smoothing filter to the interrogation area to eliminate high frequency noise from our vector field.</p>
+<p>I used a multi-pass iteration scheme (a 64x64 pixel interrogation window followed by a 32x32 pixel interrogation window) to increase resolution of the computed vector field. I applied a median filter to the interrogation area to eliminate vectors with a difference of greater than 3 RMS of neighboring vectors. Additionally, I applied a smoothing filter to the interrogation area to eliminate high frequency noise from each vector field.</p>
                 </div>
                   
               </div>
@@ -311,7 +311,7 @@
   <em>Analytical model labeled geometry.</em>
 </div>
 
-<p>I used CONVERGE CFD to simulate the inflow of air into the cylinder with the same constant lift values as those specified in the PIV experiment and with the cylinder fixed at bottom dead center. I used a Cartesian cut-cell mesh wiht automatic mesh refinement based on the velocity gradient. All simulations used the k-omega SST turbulence model; this model captured the near-wall behavior near the cylinder wall well while also capturing the fully turbulent free-stream flow within the cylinder.</p>
+<p>I used CONVERGE CFD to simulate the inflow of air into the cylinder with the same constant lift values as those specified in the PIV experiment and with the cylinder fixed at bottom dead center. I used a Cartesian cut-cell mesh with automatic mesh refinement based on the velocity gradient. All simulations used the k-omega SST turbulence model; this model captured the near-wall behavior near the cylinder wall well while also capturing the fully turbulent free-stream flow within the cylinder.</p>
                 </div>
                   
               </div>
@@ -325,7 +325,7 @@
                 <div class="text-content text-basis-full">
                   
 
-<p>All boundaries were treated as walls aside from the inflow and outflow, which were treated as a pressure inlet and a pressure outlet, respectively. All simulations ran for 10,000 iterations in steady state using the Dense Memory Cluster provided by the Alabama Supercomputer Authority. All resulting velocity fields and animations are obtained using Tecplot, a CFD post-processing program.</p>
+<p>All boundaries were treated as walls aside from the inflow and outflow, which were treated as a pressure inlet and a pressure outlet, respectively. All simulations ran for 10,000 iterations in steady state using the Dense Memory Cluster provided by the Alabama Supercomputer Authority. All resulting velocity fields and animations were obtained using Tecplot, a CFD post-processing program.</p>
                 </div>
                   
               </div>
@@ -339,7 +339,7 @@
                 <div class="text-content text-basis-full">
                   
 
-<p>Results indicate that the, similarly to the PIV experiment described above, the increased valve lift increases the size and strength of the vortices while shifting their location farther up in the cylinder.</p>
+<p>Results indicate that, similarly to the PIV experiment described above, the increased valve lift increases the size and strength of the vortices while shifting their location farther up in the cylinder.</p>
                 </div>
                   
               </div>
@@ -406,7 +406,7 @@
   <em>Results comparison from top to bottom: L/D = 0.1, L/D = 0.15, L/D = 0.2, L/D = 0.25, L/D = 0.3.</em>
 </div>
 
-<p>Quantitatively, the nondimensional tumble number was calculated for both PIV and CFD results. Comparison indicates very close agreement well within a 95% confidence interval.</p>
+<p>Quantitatively, the nondimensional tumble number was calculated for both PIV and CFD results. Comparison indicates very close agreement within a 95% confidence interval.</p>
                 </div>
                   
               </div>
@@ -474,22 +474,45 @@
       
       <article class="project col col-4 col-d-6 col-t-12">
         <div class="project__content">
-          <a href="/portfolio/axial-flow-compressor-analysis" class="project__image">
+          <a href="/portfolio/heat-exchanger-analysis" class="project__image">
             
-            <img class="lazy" data-src="/images/compressor_stage_iso.png" alt="Axial Flow Compressor Design and CFD Analysis">
+            <img class="lazy" data-src="/images/heatexchanger_front.png" alt="Heat Exchanger Design and CFD Analysis">
           </a>
           <div class="project__info">
             
             <div class="project__label">Spring 2018</div>
             
             
-            <h3 class="project__title"><a class="project__link" href="/portfolio/axial-flow-compressor-analysis">Axial Flow Compressor Design and CFD Analysis</a></h3>
+            <h3 class="project__title"><a class="project__link" href="/portfolio/heat-exchanger-analysis">Heat Exchanger Design and CFD Analysis</a></h3>
             
           </div>
         </div>
       </article>
       
       
+      
+    
+      
+      <article class="project col col-4 col-d-6 col-t-12">
+        <div class="project__content">
+          <a href="/portfolio/turducken-thermal-analysis" class="project__image">
+            
+            <img class="lazy" data-src="/images/turducken_mesh_iso.png" alt="Turducken Thermal Design and Analysis">
+          </a>
+          <div class="project__info">
+            
+            <div class="project__label">Fall 2017</div>
+            
+            
+            <h3 class="project__title"><a class="project__link" href="/portfolio/turducken-thermal-analysis">Turducken Thermal Design and Analysis</a></h3>
+            
+          </div>
+        </div>
+      </article>
+      
+      
+      
+    
       
     
       
@@ -505,27 +528,6 @@
             
             
             <h3 class="project__title"><a class="project__link" href="/portfolio/spandrel-analysis">Thermal Performance of Spandrel Assemblies in Glazed Wall Systems</a></h3>
-            
-          </div>
-        </div>
-      </article>
-      
-      
-      
-    
-      
-      <article class="project col col-4 col-d-6 col-t-12">
-        <div class="project__content">
-          <a href="/portfolio/ferrofluid" class="project__image">
-            
-            <img class="lazy" data-src="/images/ferrofluid_setup.png" alt="Magnetic Fluid Control System for Drug Therapy">
-          </a>
-          <div class="project__info">
-            
-            <div class="project__label">Fall 2018 - Spring 2019</div>
-            
-            
-            <h3 class="project__title"><a class="project__link" href="/portfolio/ferrofluid">Magnetic Fluid Control System for Drug Therapy</a></h3>
             
           </div>
         </div>

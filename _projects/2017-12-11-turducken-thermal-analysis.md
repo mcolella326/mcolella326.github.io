@@ -23,13 +23,13 @@ medias:
 ---
 # Background
 
-The final project for Cooper Union's Introduction to Computer Aided Engineering (CAE) course split the class into 4-person teams to analyze the cooking process for a turducken using a convection oven and two resistive heating skewers. The turducken consists of 3 layers: an outer layer of only turkey, a middle layer consisting of a homogeneous mixture of duck and chicken, and an inner layer of a team-selected stuffing. The goal of this project is to minimize the amount of time taken to "fully cook" the turducken (minimum temperature of 185°F) while also minimizing the percentage of "burnt" turducken (minimum temperature of 265°F). We performed a transient thermal analysis on the turducken using ANSYS Workbench and validated our results with a simplified hand calculation.
+The final project for Cooper Union's Introduction to Computer Aided Engineering (CAE) course involved teams of 4 students analyzing the cooking process of a turducken using a convection oven and 2 resistive heating skewers. The turducken consists of 3 layers: an outer layer of turkey, a middle layer of a homogeneous mixture of duck and chicken, and an inner layer of team-selected stuffing. The objective was to minimize the cooking time required to fully cook the turducken (minimum temperature of 185°F) while also minimizing the percentage of burnt turducken (temperature exceeding 265°F). We performed a transient thermal analysis on the turducken using ANSYS Workbench and validated our results with simplified hand calculations.
 
-Each team is provided with the same turducken geometry, restrictions on the temperature criteria, and design limitations for the skewers and oven. The assignment with all applicable rules is attached <a href="{{ '/pdfs/ME408_Final_Fall_2017.pdf' | relative_url }}" target="_blank">here</a>.
+Each team was provided with the same turducken geometry, temperature criteria, and design limitations for the skewers and oven. The full assignment with all applicable rules can be found <a href="{{ '/pdfs/ME408_Final_Fall_2017.pdf' | relative_url }}" target="_blank">here</a>.
 
 # Setup and Mesh
 
-Our team used a simple pointed rod design for the skewers, placing them through the thickest segments of the turducken as these were the areas with the highest thermal capacitance. Using the 2006 ASHRAE Refrigeration Handbook, we determined the relevant thermal conductivity, density, and specific heat for each material as a function of temperature, weighting homogeneous mixtures gravimetrically for specific heat and volumetrically for thermal conductivity and density. We additionally accounted for the changes in these properties as the water in each material evaporated out and as each material burned.
+Our team designed simple pointed skewers, placing them through the thickest parts of the turducken as these areas have the highest thermal capacitance. Using the 2006 ASHRAE Refrigeration Handbook, we determined the relevant thermal conductivity, density, and specific heat for each material as a function of temperature, weighting homogeneous mixtures gravimetrically for specific heat and volumetrically for thermal conductivity and density. We additionally accounted for the changes in these properties due to water evaporation and material burning.
 
 <div class="gallery-box">
   <div class="gallery_two">
@@ -39,7 +39,7 @@ Our team used a simple pointed rod design for the skewers, placing them through 
   <em>Turducken with skewers side and rear views.</em>
 </div>
 
-We split the turducken in half along the turducken vertical midplane due to geometric and thermal symmetry in the analysis, significantly reducing our mesh size and solve time. All convection coefficients and emissive properties were approximated from online research based on similar studies in standard convection ovens as physical experimentation and CFD methods were outside the scope of this analysis.
+To reduce our mesh and solve time, we exploited geometric and thermal symmetry, splitting the turducken along its vertical midplane. All convection coefficients and emissive properties were approximated based on similar studies in standard convection ovens, as physical experimentation and CFD methods were outside the scope of this analysis.
 
 <div class="gallery-box">
   <div class="gallery_two">
@@ -48,11 +48,11 @@ We split the turducken in half along the turducken vertical midplane due to geom
   <em>Turducken boundary conditions.</em>
 </div>
 
-We used Altair Hypermesh to slice the stuffing, ducken, wing, and skewer to allow for mapped hexahedral meshing where possible. Because the turkey is not as easily mappable, we opted to use a hexcore mesh primarily for mesh space efficiency. Where hexahedral elements could not be used, we used smaller tetrahedral elements, notably at locations where we expected higher temperature gradients (e.g., around the skewer). The mesh had a total element count of approximately 495,000. All elements were element type SOLID70.
+Using Altair Hypermesh, we sliced the stuffing, ducken, wing, and skewers to allow for mapped hexahedral meshing where possible. Because the turkey is not as easily mappable, we opted to use a hexcore mesh primarily for mesh space efficiency. Where hexahedral elements could not be used, we used smaller tetrahedral elements, notably at locations where we expected higher temperature gradients (e.g., around the skewer). The mesh had a total element count of approximately 495,000. All elements were element type SOLID70.
 
 # Validation
 
-To validate the results obtained by the model, we created an equivalent transient thermal RC circuit to capture the rise in temperature at nodes across the turducken. The model treats the turducken as a set of concentric spheres, lumping the resistive and capacitive effects for each layer. The skewer is treated as a current source that is turned on and off at specific times in the analysis. The resulting coupled ODEs are assembled in MATLAB and are solved concurrently using Forward Euler numerical methods.
+To validate our model results, we created an equivalent transient thermal RC circuit to simulate the rise in temperature at various nodes across the turducken. This model treated the turducken as a set of concentric spheres, lumping the resistive and capacitive effects for each layer. The skewers were treated as current sources that were toggled at specific intervals in the analysis. The resulting coupled ODEs were assembled in MATLAB and are solved concurrently using Forward Euler numerical methods.
 
 ![Turducken Thermal Circuit](/images/turducken_thermal_circuit.png)
 *Turducken thermal circuit.*
@@ -61,7 +61,7 @@ Hand calculation results indicate that the skewers should remain on for approxim
 
 # Results
 
-Our model results show close agreement with the hand calculations (maximum ~20% difference). Results indicate that, if the skewers are left on for 4.25 hours and if the turducken is left in the oven for 6.25 hours, the turducken is only 39% burnt. Compared to a similar analysis without the skewers, the turducken with skewers is 20% less burnt and needs about 6 fewer hours in the oven.
+Our model results showed close agreement with the hand calculations (maximum ~20% difference). Results indicated that, if the skewers were left on for 4.25 hours and if the turducken was left in the oven for 6.25 hours, the turducken was only 39% burnt. Compared to a similar analysis without the skewers, the turducken with skewers was 20% less burnt and needed about 6 fewer hours in the oven.
 
 ![Hand calculation heating results](/images/turducken_hand_calc_and_analysis.png)
 *Hand calculation results compared to analysis results: solid lines represent ANSYS simulation results, and dashed lines represent hand calculation results.*
@@ -76,4 +76,4 @@ Our model results show close agreement with the hand calculations (maximum ~20% 
   <em>Turducken temperature after 1 hour (upper left), 3 hours (upper right), 5 hours (lower left), and 6.25 hours (lower right) in the oven.</em>
 </div>
 
-A 52-page report further detailing the hand calculation, model, skewer design, and cooking instructions can be found <a href="{{ '/pdfs/ME408_Final_Report.pdf' | relative_url }}" target="_blank">here</a>.
+A detailed 52-page report further covering the hand calculations, model, skewer design, and cooking instructions can be found <a href="{{ '/pdfs/ME408_Final_Report.pdf' | relative_url }}" target="_blank">here</a>.

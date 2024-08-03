@@ -51,6 +51,12 @@ permalink: '/experience/'
     - Created a 3D steady-state thermal model considering night sky radiation, local ASHRAE design temperatures, and exterior wind speeds
     - Performed an interior convection coefficient sensitivity study and advised the design team on HVAC strategies to mitigate condensation potential, reducing condensation potential to 35 nonconsecutive hours per year
 
+# CFD Undergraduate Researcher: University of Alabama
+*May 2018 - August 2018*
+- Developed and validated a CFD model using particle image velocimetry to predict airflow patterns and in-cylinder tumble in a 2.4-liter Chrysler Cirrus engine, achieving close agreement between PIV and CFD results
+- Utilized advanced PIV imaging techniques to visualize and analyze airflow velocity vectors, applying multi-pass iteration schemes, median filters, and smoothing filters for high-resolution vector fields
+- Successfully presented findings at the 71st annual meeting of the APS Division of Fluid Dynamics, demonstrating accurate prediction of nondimensional tumble numbers and velocity vector magnitudes within a 95% confidence interval
+
 # FEA Engineering Intern: Harris Corporation
 *May 2017 - August 2017*
 - Modeled and physically tested radar jammer components to meet structural, vibrational, and thermal criteria using ANSYS Mechanical APDL and CREO Parametric, integrating component design into the overall assembly
