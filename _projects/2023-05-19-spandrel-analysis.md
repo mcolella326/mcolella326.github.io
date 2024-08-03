@@ -2,11 +2,11 @@
 title: Thermal Performance of Spandrel Assemblies in Glazed Wall Systems
 date: 2023-05-19
 label: Spring 2023
-description: Outlining an accurate and repeatable procedure for assessing spandrel panel system thermal performance using steady-state CFD analyses
+description: Outlining an accurate and repeatable procedure for assessing spandrel panel system thermal performance using steady-state FEA and CFD analyses
 image: '/images/pankow_cover.png'
 featured: true
 timeline: Spring 2023
-tools: StarCCM+, THERM, SolidWorks, Design of Experiments
+tools: StarCCM+, THERM, SolidWorks
 medias:
 ---
 # Background
@@ -23,7 +23,7 @@ A spandrel is a pane-like area between the head of a window on one level and the
   <em>Typical spandrel front view (left) and section view (right).</em>
 </div>
 
-My role in this phase of the project consisted of performing 2D FEA and 3D CFD simulations of vented and sealed spandrel assemblies under various exterior wind speed conditions to compare local temperature results and overall thermal performance results. I additionally assisted in developing a laboratory testing program to validate these simulations, assessing critical locations for thermocouple placement and using Design of Experiments techniques to determine a set of variants to be tested in future phases.
+My role in this phase of the project consisted of performing 2D FEA and 3D CFD simulations of vented and sealed spandrel assemblies under various exterior wind speed conditions to compare local temperature results and overall thermal performance results. I additionally assisted in developing a laboratory testing program to validate these simulations, assessing critical locations for thermocouple placement and determining a set of variants to be tested in future phases.
 
 # CFD Simulation and Results
 

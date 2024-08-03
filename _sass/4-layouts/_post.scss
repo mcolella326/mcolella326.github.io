@@ -113,21 +113,14 @@
 
 .post-image,
 .page-image {
-  position: relative;
-  transform: translate(0);
-  padding-top: 50%;
-  border-radius: 22px;
-  overflow: hidden;
-  width: 50%;
-  flex-shrink: 0;
-  float: left;
+  flex: 1 1 50%;
+  box-sizing: border-box;
+  padding: 10px;
 
   img {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: auto;
+    border-radius: 22px;
     object-fit: cover;
     user-select: none;
   }
@@ -135,9 +128,21 @@
   @supports not (aspect-ratio: 4/3) {
     padding-bottom: 75%;
   }
+}
 
-  @media (max-width: $tablet) {
-    border-radius: 16px;
+@media (max-width: $tablet) {
+  .post-image, .page-image, .page__text {
+    flex: 1 1 100% !important;
+    padding: 10px 0;
+    margin-top: 0;
+  }
+
+  .post-image img, .page-image img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    margin: 0 auto;
+    display: grid;
   }
 }
 
@@ -227,10 +232,12 @@
 
 .page__content {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .page__text {
-  flex-basis: 50%;
+  flex: 1 1 50%;
+  box-sizing: border-box;
   padding-right: calc(16px*2);
 }
 
@@ -277,11 +284,11 @@
   margin-bottom: 20px;
 
   @media (max-width: $tablet) {
-    margin-bottom: 96px;
+    margin-bottom: 20px;
   }
 
   @media (max-width: $mobile) {
-    margin-bottom: 80px;
+    margin-bottom: 20px;
   }
 }
 
