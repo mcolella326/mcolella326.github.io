@@ -15,7 +15,7 @@ menu_settings:
       url: "/"
     - title: "Portfolio"
       url: "/portfolio/"
-    - title: "Experience"
+    - title: "Work Experience"
       url: "/experience/"
 
 #-------------------------------
@@ -28,7 +28,7 @@ footer_menu__settings:
       url: '/'
     - title: 'Portfolio'
       url: '/portfolio/'
-    - title: 'Experience'
+    - title: 'Work Experience'
       url: '/experience/' 
 
 # Social Links

@@ -6,7 +6,7 @@ description: Outlining an accurate and repeatable procedure for assessing spandr
 image: '/images/pankow_cover.png'
 featured: true
 timeline: Spring 2023
-tools: StarCCM+, THERM, SolidWorks
+tools: StarCCM+, SolidWorks, LabVIEW, thermocouples, environmental chambers
 medias:
 ---
 # Background

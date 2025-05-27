@@ -8,14 +8,21 @@ featured: true
 timeline: Spring 2018
 tools: ANSYS Fluent, SolidWorks, Excel
 medias:
-  - paragraph_index: '0'
-    url: '/images/compressor_overall_iso.png'
-    media_type: 'image'
-    subtitle: 'Compressor overall geometry.'
+  # - paragraph_index: '0'
+  #   url: '/images/compressor_overall_iso.png'
+  #   media_type: 'image'
+  #   subtitle: 'Compressor overall geometry.'
 ---
 # Background
 
 For the final project in Cooper Union's Computational Fluid Dynamics (CFD) course, students were divided into 4-person teams tasked with designing an axial flow compressor under specified pressure ratio, size, and speed constraints. The objective was to minimize the power consumption of the compressor while maintaining an outer diameter between 4 and 6 feet, operating at a rotational speed under 65,000 RPM, and providing a minimum pressure ratio of 20:1 at a design altitude of 37,000 feet. No constraints were placed on rotor and stator geometry, material strength, material compatibility, and manufacturing methods and costs. We performed transient CFD simulations and validation hand calculations to achieve this design task.
+
+<div class="gallery-box">
+  <div class="gallery_two">
+    <img src="/images/compressor_overall_iso.png" loading="lazy" alt="Compressor overall geometry">
+  </div>
+  <em>Compressor overall geometry.</em>
+</div>
 
 Each team was provided with the same design limitations, performance criteria, and design goal. The complete assignment can be found <a href="{{ '/pdfs/ME407_Final_Spring_2018.pdf' | relative_url }}" target="_blank">here</a>.
 
