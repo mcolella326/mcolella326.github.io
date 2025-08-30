@@ -1,0 +1,87 @@
+---
+layout: default
+title: Michael Colella
+image: '/images/colella2.jpg'
+---
+
+<div class="container">
+  <div class="page__head">
+    <div class="page__info">
+      {% if page.title %}
+      <h1 class="page__title">Welcome to my portfolio!</h1>
+      {% endif %}
+      {% if page.description %}
+      <p class="page__description">{{ page.description }}</p>
+      {% else site.data.settings.projects.projects_description %}
+      <p class="page__description">{{ site.data.settings.projects.projects_description }}</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<!-- begin page -->
+<article class="page">
+  <div class="page__content">
+    <div class="page-image">
+      <img class="lazy" data-src="{{site.baseurl}}{{page.image}}" alt="{{page.title}}" loading="lazy">
+    </div>
+    <div class="page__text">
+      <p>Hi! My name is Michael. I am a licensed mechanical engineer (NY License #109827) with 6+ years of experience specializing in thermo-fluid system design, data acquisition, simulation-driven product development via FEA and CFD, and hands-on testing. I've led cross-disciplinary teams and have brought projects from concept through validation. I'm skilled with tools like STAR-CCM+, ANSYS Fluent, SolidWorks, LabVIEW, and Python, with a focus on automation, data visualization, and design validation.</p>
+      <p>My professional interests include thermal design and analysis, fluid mechanics, and manufacturing. In my free time, I'm typically 3D printing, working on side projects, or scheduling way too many board game nights with friends.</p>
+      <p>Contact me by email <a href="mailto:mcolella326@gmail.com">here</a>. Feel free to get in touch if you have any questions about my work or would like to see my résumé!</p>
+    </div>
+  </div>
+</article>
+<!-- end page -->
+
+<!-- begin featured section -->
+<section class="section projects animate">
+  <div class="container">
+    <div class="container__inner">
+
+      <div class="section__info">
+        <div class="section__head">
+          <h2 class="section__title">Featured Projects</h2>
+          <a class="section__link" href="{{ '/portfolio' | relative_url }}">View all <i class="fa-solid fa-chevron-right"></i></a>
+        </div>
+      </div>
+
+      <div class="row">
+      {% assign sorted = site.projects | sort: 'date' | reverse %}
+      {% assign displayed_projects = 0 %}
+
+      {% for project in sorted %}
+        {% unless project.featured != true %}
+        {% assign displayed_projects = displayed_projects | plus: 1 %}
+        <article class="project col col-4 col-d-6 col-t-12">
+          <div class="project__content">
+            <a href="{{ project.url }}" class="project__image">
+              {% if project.image and project.video_embed %}
+              <div class="video-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                  <polygon points="40,30 70,50 40,70"></polygon>
+                </svg>
+              </div>
+              {% endif %}
+              <img class="lazy" data-src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+            </a>
+            <div class="project__info">
+              {% if project.label %}
+              <div class="project__label">{{ project.label }}</div>
+              {% endif %}
+              {% if project.title %}
+              <h3 class="project__title"><a class="project__link" href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+              {% endif %}
+              {% if project.description %}
+              <div class="project__description">{{ project.description }}</div>
+              {% endif %}
+            </div>
+          </div>
+        </article>
+        {% endunless %}
+      {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end featured section -->

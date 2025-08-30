@@ -11,10 +11,10 @@ color_scheme: light
 # Navigation Settings
 menu_settings:
   menu_items:
-    - title: "Home"
-      url: "/"
     - title: "Portfolio"
       url: "/portfolio/"
+    - title: "About Me"
+      url: "/aboutme/"
     - title: "Work Experience"
       url: "/experience/"
 
@@ -24,10 +24,10 @@ menu_settings:
 # Footer Navigation
 footer_menu__settings:
   menu__items:
-    - title: 'Home'
-      url: '/'
     - title: 'Portfolio'
       url: '/portfolio/'
+    - title: 'About Me'
+      url: '/aboutme/'
     - title: 'Work Experience'
       url: '/experience/' 
 

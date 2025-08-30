@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://localhost:4000/experience/</loc>
-<lastmod>2025-05-27T04:03:10-04:00</lastmod>
+<lastmod>2025-08-30T17:02:51-04:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/portfolio/turducken-thermal-analysis</loc>
@@ -37,10 +37,10 @@
 <lastmod>2023-05-19T00:00:00-04:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/portfolio/</loc>
+<loc>http://localhost:4000/aboutme/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/</loc>
+<loc>http://localhost:4000/portfolio/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/pdfs/ME407_Final_Report.pdf</loc>

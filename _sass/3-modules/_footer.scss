@@ -65,10 +65,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 
   .footer__navigation__item {
-    display: inline-block;
+    display: flex;
     margin-right: 32px;
     margin-bottom: 0;
 
