@@ -12,6 +12,7 @@ medias:
   #   url: '/images/heatexchanger_iso.png'
   #   media_type: 'image'
   #   subtitle: 'Heat exchanger and duct geometry.'
+tags: [personal]
 ---
 # Background
 

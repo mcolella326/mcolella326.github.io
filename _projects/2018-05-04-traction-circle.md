@@ -8,6 +8,7 @@ featured:
 timeline: Spring 2018
 tools: Data acquisition system with linear potentiometers and accelerometers, SolidWorks, MATLAB
 medias:
+tags: [personal]
 ---
 # Background
 

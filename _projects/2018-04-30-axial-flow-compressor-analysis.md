@@ -12,6 +12,7 @@ medias:
   #   url: '/images/compressor_overall_iso.png'
   #   media_type: 'image'
   #   subtitle: 'Compressor overall geometry.'
+tags: [personal]
 ---
 # Background
 

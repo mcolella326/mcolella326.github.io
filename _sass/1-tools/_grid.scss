@@ -31,7 +31,7 @@ $mq: ( $mobile:$columns, $tablet:$columns, $desktop:$columns );
 
 .container {
   margin: 0 auto;
-  margin-top: 70px;
+  margin-top: 80px;
 
   @media (max-width: $wide) {
     max-width: 1000px;

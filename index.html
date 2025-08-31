@@ -14,6 +14,32 @@ redirect_from: '/'
     <p class="page-description">{{ site.data.settings.projects.projects_description }}</p>
     {% endif %}
   </div>
+
+  <div class="explore-tags">
+    <h2>Project Type:</h2>
+    <div class="tag-cloud">
+      {% assign all_tags = "" | split: "" %}
+      {% for p in site.projects %}
+        {% if p.tags %}
+          {% assign all_tags = all_tags | concat: p.tags %}
+        {% endif %}
+      {% endfor %}
+      {% assign unique_tags = all_tags | uniq | sort_natural %}
+      {% for tag in unique_tags %}
+        {% assign count = 0 %}
+        {% for p in site.projects %}
+          {% if p.tags and p.tags contains tag %}
+            {% assign count = count | plus: 1 %}
+          {% endif %}
+        {% endfor %}
+
+        <a class="post__tag"
+          href="{{ '/tags/' | relative_url }}?tag={{ tag | url_encode }}">
+          {{ tag }} <span>({{ count }})</span>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
 </div>
 
 <!-- begin projects -->
@@ -38,6 +64,15 @@ redirect_from: '/'
               {% if project.label %}
               <div class="project__label">{{ project.label }}</div>
               {% endif %}
+              <div class="post__meta">
+                {% if project.tags.size >= 1 %}
+                <div class="post__tags">
+                {% for tag in project.tags %}
+                <a href="{{ site.baseurl }}/tags/?tag={{ tag | downcase | url_encode }}" class="post__tag">{{ tag }}</a>
+                {% endfor %}
+                </div>
+                {% endif %}
+              </div>
               {% if project.title %}
               <h3 class="project__title"><a class="project__link" href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
               {% endif %}

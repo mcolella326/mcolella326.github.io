@@ -8,6 +8,7 @@ featured:
 timeline: Fall 2018 - Spring 2019
 tools: SolidWorks, Python, Arduino
 medias:
+tags: [personal]
 ---
 # Background
 

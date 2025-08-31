@@ -6,10 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Magnetic Fluid Control System for Drug Therapy</title>
-  <meta name='description' content='Developing a novel method for controlling ferrofluid particulates in 2D space using an electromagnet array, magnetometers, and a nonlinear control algorithm'>
+  <title>Tags</title>
+  <meta name='description' content='A collection of projects and experiences from Michael Colella'>
 
-  <link rel="canonical" href="http://localhost:4000/portfolio/ferrofluid">
+  <link rel="canonical" href="http://localhost:4000/tags/">
   <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
 
   <!-- Fonts -->
@@ -105,444 +105,224 @@
 
   <!-- begin content -->
   <main class="content" aria-label="Content">
-    <div class="container">
-
-  <div class="project-content">
-
-    <div class="project-info">
-      
-      <h1 class="project-title">Magnetic Fluid Control System for Drug Therapy</h1>
-      
-    </div>
-
-    <div class="project-head">
-      
-      
-      <div class="project-image">
-        <img class="lazy" data-src="/images/ferrofluid_setup.png" alt="Magnetic Fluid Control System for Drug Therapy">
-      </div>
-      <div class="project-intro">
-        <p><strong>Timeline:</strong><br>Fall 2018 - Spring 2019</p>
-        <p><strong>Tools used:</strong><br>SolidWorks, Python, Arduino</p>
-      </div>
-      
-      
-    </div>
-
-    <div class="content-container">
-      
-      
-      
-          
-            
-            
-            
-              <div class="paragraph-container">
-                <div class="text-content text-basis-full">
-                  <h1 id="background">Background</h1>
-
-<p>Magnetic drug delivery focuses a cancer drug to a target area by coating a colloidal mixture of ferrofluid nanoparticles and a suspension fluid with therapeutic drugs, injecting the mixture into the body, and delivering it to the target area in vivo by manipulating an external magnetic field. While previous research has explored regarding the efficacy of magnetic drug delivery, little has been done to implement a control system that moves the ferrofluid to a specified location.</p>
-                </div>
-                  
-              </div>
-          
-      
-          
-            
-            
-            
-              <div class="paragraph-container">
-                <div class="text-content text-basis-full">
-                  
-
-<p>The goal of this project was to design a fully operational 2D ferrofluid particulate control system. I worked in a team of 3 to develop test rigs for the control system and to write Python/Arduino code that triangulated the position of a ferrofluid particulate using magnetometer feedback and actuated the magnetometers to minimize the required power to move this particulate to a desired position. By the project’s conclusion, we successfully controlled a ferrofluid particulate using visual feedback and developed an algorithm that can accurately determine a ferrofluid particulate’s position in real time without visual feedback by using a magnetometer array.</p>
-                </div>
-                  
-              </div>
-          
-      
-          
-            
-            
-            
-              <div class="paragraph-container">
-                <div class="text-content text-basis-full">
-                  
-
-<h1 id="material-selection">Material Selection</h1>
-
-<p>To simulate the ferrofluid and suspension fluid, we used EMG 304 (a water-based ferrofluid) and vegetable oil. The suspension fluid’s higher viscosity allowed the ferrofluid to retain its shape with minimal diffusion and move at relatively slow speeds for stable control.</p>
-                </div>
-                  
-              </div>
-          
-      
-          
-            
-            
-            
-              <div class="paragraph-container">
-                <div class="text-content text-basis-full">
-                  
-
-<div class="gallery-box">
-  <div class="gallery_two">
-    <img src="/images/ferrofluid_ferrofluid.png" loading="lazy" alt="Ferrofluid suspended in vegetable oil" />
-  </div>
-  <em>Ferrofluid suspended in vegetable oil.</em>
-</div>
-
-<p>We selected electromagnets based on the nominal magnetic strength, cost, and size. The magnetic field needed to be strong enough to pull a ferrofluid particulate while overcoming viscous resistance and without overheating. Based on preliminary research and basic magnetohydrodynamic simulations, we purchased 4 1.5-inch diameter electromagnets with 1687 turns each. These electromagnets had enough turns to generate a magnetic field throughout the intended control region while being small and inexpensive enough to fit well within our test rig and budget.</p>
-                </div>
-                  
-              </div>
-          
-      
-          
-            
-            
-            
-              <div class="paragraph-container">
-                <div class="text-content text-basis-full">
-                  
-
-<h1 id="magnetic-field-theoretical-model-and-experimental-validation">Magnetic Field Theoretical Model and Experimental Validation</h1>
-
-<p>To predict how the ferrofluid would move under the influence of the electromagnets, we modeled the resulting magnetic field within a 2-centimeter radius Petri dish surrounded by 4 electromagnets placed axisymmetrically around the dish. The external magnetic field was characterized using Biot-Savart’s law.</p>
-                </div>
-                  
-              </div>
-          
-      
-          
-            
-            
-            
-              <div class="paragraph-container">
-                <div class="text-content text-basis-full">
-                  
-
-<div class="gallery-box">
-  <div class="gallery_two">
-    <img src="/images/ferrofluid_field.png" loading="lazy" alt="Magnetic field simulation" />
-  </div>
-  <em>Magnetic field simulation results. All electromagnets are turned on with equal amounts of current flowing through each electromagnet.</em>
-</div>
-
-<p>To physically validate the above results, we developed an experimental rig with one electromagnet, a Lakeshore 410 gaussmeter connected to a Hall probe, and a three-axis micromanipulator to hold the probe and accurately change its position in 3D space. As the probe moves around the electromagnet, it measured the magnetic field output in real time; these data points were recorded for comparison to analytical results.</p>
-                </div>
-                  
-              </div>
-          
-      
-          
-            
-            
-            
-              <div class="paragraph-container">
-                <div class="text-content text-basis-full">
-                  
-
-<div class="gallery-box">
-  <div class="gallery_two">
-    <img src="/images/ferrofluid_experimental.png" loading="lazy" alt="Labeled experimental rig" />
-  </div>
-  <em>Labeled experimental rig to measure magnetic field output from electromagnet.</em>
-</div>
-
-<p>We produced an analytical surface plot of the magnetic field produced by a single electromagnet overlaid with experimentally measured points for validation. The positions of the data points had uncertainty in the x and y directions representative of the instrumental uncertainty of the micromanipulator, and the magnitude of the magnetic field had uncertainty due to both the micromanipulator and the gaussmeter. The error bars shown below represent the larger of the instrumental and experimental errors.</p>
-                </div>
-                  
-              </div>
-          
-      
-          
-            
-            
-            
-              <div class="paragraph-container">
-                <div class="text-content text-basis-full">
-                  
-
-<div class="gallery-box">
-  <div class="gallery_two">
-    <img src="/images/ferrofluid_field_validation.png" loading="lazy" alt="Validation of magnetic field results with experimental results" />
-  </div>
-  <em>Validation of magnetic field results with overlaid experimental results and error bars.</em>
-</div>
-
-<h1 id="tracking-algorithm">Tracking Algorithm</h1>
-
-<p>We implemented a least squares error minimization optimizer to minimize the error between the recorded magnetic field and a simulated magnetic field within the control domain. This minimum error approximates the position of a magnetic particle within the region. We place positional constraints to keep the magnetic particle’s position within the Petri dish and magnetization constraints to ensure that the particle’s orientation does not affect its computed position.</p>
-                </div>
-                  
-              </div>
-          
-      
-          
-            
-            
-            
-              <div class="paragraph-container">
-                <div class="text-content text-basis-full">
-                  
-
-<p>Our tracking algorithm took advantage of the nonlinear nature of the magnetic fields to minimize error, time, and power exerted on electromagnets. The controller was split into 3 segments: a linear segment to scale the error between the current and desired ferrofluid position using an experimentally-determined proportional gain, a nonlinear segment to determine the voltage needed for each electromagnet to achieve the desired magnetic field, and a nonlinear filter to ensure smooth voltage and magnetic field changes as the ferrofluid travels along its calculated path.</p>
-                </div>
-                  
-              </div>
-          
-      
-          
-            
-            
-            
-              <div class="paragraph-container">
-                <div class="text-content text-basis-full">
-                  
-
-<h1 id="visual-feedback-control-setup-and-demonstration">Visual Feedback Control Setup and Demonstration</h1>
-
-<p>We developed a visual tracking setup to directly compare to a magnetometer array setup. This visual tracking setup was able to move a ferrofluid particulate in the Petri dish to a desired point in 2D space. A webcam relayed the current position of the ferrofluid to our control algorithm, which output 4 voltage commands to the Arduino. The Arduino sent a PWM signal to the L298N dual H-bridge motor controller to control the effective voltage given to each electromagnet.</p>
-                </div>
-                  
-              </div>
-          
-      
-          
-            
-            
-            
-              <div class="paragraph-container">
-                <div class="text-content text-basis-full">
-                  
-
-<div class="gallery-box">
-  <div class="gallery_two">
-    <img src="/images/ferrofluid_visual_setup.png" loading="lazy" alt="Experimental rig for visual feedback control system" />
-  </div>
-  <em>(A) Experimental rig for visual feedback control system. (B) Schematic diagram of visual feedback control system.</em>
-</div>
-
-<p>The visual feedback system used a Logitech C270 webcam and Python’s OpenCV library. The webcam 720p resolution was sufficient to track a particle moving at speeds on the order of 1 mm/s. We wrote a Python script with a tkinter GUI to search for the boundary of the Petri dish (represented by a thick green circle), ignore all images outside of that boundary, and locate the ferrofluid particulate within the control domain.</p>
-                </div>
-                  
-              </div>
-          
-      
-          
-            
-            
-            
-              <div class="paragraph-container">
-                <div class="text-content text-basis-full">
-                  
-
-<div class="gallery-box">
-  <div class="gallery_two">
-    <img src="/images/ferrofluid_opencv.png" loading="lazy" alt="Visual feedback control system GUI" />
-  </div>
-  <em>(A) Color sliders with output to give OpenCV a specific color to mark Petri disk boundary. (B) Petri dish locator in black and white image. (C) Petri dish locator in colored image. (D) Ferrofluid particulate locator in black and white image.</em>
-</div>
-
-<p>The control algorithm demonstrated precise and quick control of the ferrofluid, consistently moving it to the desired setpoint.</p>
-                </div>
-                  
-              </div>
-          
-      
-          
-            
-            
-            
-              <div class="paragraph-container">
-                <div class="text-content text-basis-full">
-                  
-
-<div class="gallery-box">
-  <div class="gallery_two">
-    <video controls="" loading="lazy" alt="Ferrofluid control video">
-      <source src="/videos/ferrofluid_control.mp4" type="video/mp4" />
-    </video>
-  </div>
-  <em>Ferrofluid control algorithm moving ferrofluid particulate to desired setpoint (center of the Petri dish).</em>
-</div>
-
-<h1 id="magnetometer-array-control-setup-and-demonstration">Magnetometer Array Control Setup and Demonstration</h1>
-
-<p>The experimental rig for the magnetometer array consisted of 4 MAG 3110 3-axis magnetometers, a 3-axis micromanipulator, an Arduino microcontroller, and an electromagnet. The localization algorithm only required 3 magnetometers to fully locate a magnetic object; 4 magnetometers were used in this configuration for more accurate tracking.</p>
-                </div>
-                  
-              </div>
-          
-      
-          
-            
-            
-            
-              <div class="paragraph-container">
-                <div class="text-content text-basis-full">
-                  
-
-<div class="gallery-box">
-  <div class="gallery_two">
-    <img src="/images/ferrofluid_magnetometer1.png" loading="lazy" alt="Magnetometer array control setup" />
-    <img src="/images/ferrofluid_magnetometer2.png" loading="lazy" alt="Magnetometer array control setup" />
-  </div>
-  <em>Magnetometer array control setup side view (left) and overhead view (right).</em>
-</div>
-
-<p>We created a tkinter GUI in Python to display data recorded from the magnetometers and the calculated position on an XY plane. The magnetometers were color coded for easy distinction. To mitigate soft-iron distortions, we determined appropriate offset factors by rotating the entire setup on a turntable while the magnetometers output their minimum and maximum magnetic field readings. Each recording was offset by a constant amount until the maxima and minima match. When this was achieved, all magnetometers read roughly the same value under Earth’s magnetic field in any orientation, indicating successful calibration. A Bluetooth connection prevented wiring issues while rotating the setup.</p>
-                </div>
-                  
-              </div>
-          
-      
-          
-            
-            
-            
-              <div class="paragraph-container">
-                <div class="text-content text-basis-full">
-                  
-
-<p>After calibration, Earth’s magnetic field was uniformly subtracted from each magnetometer, rotation matrices converted the magnetic field readings from the magnetometers’ reference frames to a common reference frame, and the position of the ferrofluid particulate was determined using a simple triangulation algorithm.</p>
-                </div>
-                  
-              </div>
-          
-      
-          
-            
-            
-            
-              <div class="paragraph-container">
-                <div class="text-content text-basis-full">
-                  
-
-<div class="gallery-box">
-  <div class="gallery_two">
-    <img src="/images/ferrofluid_magnetometer_startup.png" loading="lazy" alt="Magnetometer calibration and magnetic field reading GUI" />
-    <video controls="" loading="lazy" alt="Ferrofluid calibration">
-      <source src="/videos/ferrofluid_calibration.mp4" type="video/mp4" />
-    </video>
-  </div>
-  <em>Left: GUI determining ferrofluid position and performing calibration procedure for magnetometers. (A) Calibration, calculation, and localization buttons. (B) Magnetometer recording output. (C) Localization results. The ferrofluid is placed close to the "red" magnetometer in this case.
-  Right: Calibration procedure: the entire setup is rotated several times to obtain the minimum and maximum magnetic field readings.</em>
-</div>
-
-<p>Using the same control algorithm described above, we derived the position of the ferrofluid and successfully moved it in 2D space without visual feedback.</p>
-                </div>
-                  
-              </div>
-          
-      
-          
-            
-            
-            
-              <div class="paragraph-container">
-                <div class="text-content text-basis-full">
-                  
-
-<div class="gallery-box">
-  <div class="gallery_two">
-    <img src="/images/ferrofluid_location.png" loading="lazy" alt="Ferrofluid location algorithm results" />
-    <img src="/images/ferrofluid_location_gui.png" loading="lazy" alt="Ferrofluid location algorithm results" />
-  </div>
-  <em>Ferrofluid location algorithm results, visualized in 3D (left) and 2D (right).</em>
-</div>
-
-<p>A 52-page report further detailing the motivation, operating metrics, reasoning for material selection, and algorithm descriptions can be found <a href="/pdfs/MagneticFluidControls_FinalTechnicalReport.pdf" target="_blank">here</a>.</p>
-                </div>
-                  
-              </div>
-          
-      
-          
-      
-    </div>
-
-  </div>
-
-  <section class="section section-related">
-    <div class="section__info section__info__center">
-      <div class="section__head">
-        <h2 class="section__title">See other projects</h2>
-      </div>
-    </div>
-
-    <div class="row">
     
-    
-    
+
+
+
+<section class="section tags">
+  <div class="container">
+    <p id="tags-directory">
       
-      <article class="project col col-4 col-d-6 col-t-12">
-        <div class="project__content">
-          <a href="/portfolio/axial-flow-compressor-analysis" class="project__image">
-            
-            <img class="lazy" data-src="/images/compressor_stage_iso.png" alt="Axial Flow Compressor Design and CFD Analysis">
-          </a>
-          <div class="project__info">
-            
-            <div class="project__label">Spring 2018</div>
-            
-            
-            <h3 class="project__title"><a class="project__link" href="/portfolio/axial-flow-compressor-analysis">Axial Flow Compressor Design and CFD Analysis</a></h3>
-            
-          </div>
-        </div>
-      </article>
+        <a class="post__tag"
+           href="/tags/?tag=personal">
+          personal
+        </a>
+         · 
       
-      
-      
-    
-      
-      <article class="project col col-4 col-d-6 col-t-12">
-        <div class="project__content">
-          <a href="/portfolio/heat-exchanger-analysis" class="project__image">
-            
-            <img class="lazy" data-src="/images/heatexchanger_front.png" alt="Heat Exchanger Design and CFD Analysis">
-          </a>
-          <div class="project__info">
-            
-            <div class="project__label">Spring 2018</div>
-            
-            
-            <h3 class="project__title"><a class="project__link" href="/portfolio/heat-exchanger-analysis">Heat Exchanger Design and CFD Analysis</a></h3>
-            
-          </div>
-        </div>
-      </article>
-      
-      
-      
-    
-      
-      <article class="project col col-4 col-d-6 col-t-12">
-        <div class="project__content">
-          <a href="/portfolio/spandrel-analysis" class="project__image">
-            
-            <img class="lazy" data-src="/images/pankow_cover.png" alt="Thermal Performance of Spandrel Assemblies in Glazed Wall Systems">
-          </a>
-          <div class="project__info">
-            
-            <div class="project__label">Spring 2023</div>
-            
-            
-            <h3 class="project__title"><a class="project__link" href="/portfolio/spandrel-analysis">Thermal Performance of Spandrel Assemblies in Glazed Wall Systems</a></h3>
-            
-          </div>
-        </div>
-      </article>
-      
-      
+        <a class="post__tag"
+           href="/tags/?tag=work">
+          work
+        </a>
         
+      
+    </p>
+  </div>
+    
+    
+
+    <div class="tags__inner is-hidden"
+         id="personal"
+         data-tag="personal">
+      <div class="container">
+        <div class="tag__info">
+          <h2 class="tag__title">
+            personal <span class="tag__counter">7</span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          
+            <article class="project col col-4 col-d-6 col-t-12">
+              <div class="project__content">
+                <a href="/portfolio/fsae" class="project__image">
+                  
+                    <img class="lazy" data-src="/images/fsae_body_cover.png" alt="Cooper Union FSAE">
+                  
+                </a>
+                <div class="project__info">
+                  <div class="project__label">Fall 2016 - Spring 2019</div>
+                  <h3 class="project__title"><a class="project__link" href="/portfolio/fsae">Cooper Union FSAE</a></h3>
+                  <div class="project__description">Building a competitive racecar from design concept through production</div>
+                </div>
+              </div>
+            </article>
+          
+            <article class="project col col-4 col-d-6 col-t-12">
+              <div class="project__content">
+                <a href="/portfolio/ferrofluid" class="project__image">
+                  
+                    <img class="lazy" data-src="/images/ferrofluid_setup.png" alt="Magnetic Fluid Control System for Drug Therapy">
+                  
+                </a>
+                <div class="project__info">
+                  <div class="project__label">Fall 2018 - Spring 2019</div>
+                  <h3 class="project__title"><a class="project__link" href="/portfolio/ferrofluid">Magnetic Fluid Control System for Drug Therapy</a></h3>
+                  <div class="project__description">Developing a novel method for controlling ferrofluid particulates in 2D space using an electromagnet array, magnetometers, and a nonlinear control algorithm</div>
+                </div>
+              </div>
+            </article>
+          
+            <article class="project col col-4 col-d-6 col-t-12">
+              <div class="project__content">
+                <a href="/portfolio/reu" class="project__image">
+                  
+                    <img class="lazy" data-src="/images/piv_cover_photo.png" alt="REU - PIV/CFD Study of Tumble Generation in a Pent-Roof Internal Combustion Engine">
+                  
+                </a>
+                <div class="project__info">
+                  <div class="project__label">Summer 2018</div>
+                  <h3 class="project__title"><a class="project__link" href="/portfolio/reu">REU - PIV/CFD Study of Tumble Generation in a Pent-Roof Internal Combustion Engine</a></h3>
+                  <div class="project__description">Using particle image velocimetry and CFD modeling techniques to validate and predict airflow patterns in an internal combustion engine</div>
+                </div>
+              </div>
+            </article>
+          
+            <article class="project col col-4 col-d-6 col-t-12">
+              <div class="project__content">
+                <a href="/portfolio/traction-circle" class="project__image">
+                  
+                    <img class="lazy" data-src="/images/traction_coilover_wide.png" alt="Measuring the Traction Limits and Suspension Forces of a Formula SAE Racecar">
+                  
+                </a>
+                <div class="project__info">
+                  <div class="project__label">Spring 2018</div>
+                  <h3 class="project__title"><a class="project__link" href="/portfolio/traction-circle">Measuring the Traction Limits and Suspension Forces of a Formula SAE Racecar</a></h3>
+                  <div class="project__description">Using traction circles and onbard data acquisition systems to compare overall vehicle performance and to better characterize the suspension system of a Formula SAE-style racecar</div>
+                </div>
+              </div>
+            </article>
+          
+            <article class="project col col-4 col-d-6 col-t-12">
+              <div class="project__content">
+                <a href="/portfolio/axial-flow-compressor-analysis" class="project__image">
+                  
+                    <img class="lazy" data-src="/images/compressor_stage_iso.png" alt="Axial Flow Compressor Design and CFD Analysis">
+                  
+                </a>
+                <div class="project__info">
+                  <div class="project__label">Spring 2018</div>
+                  <h3 class="project__title"><a class="project__link" href="/portfolio/axial-flow-compressor-analysis">Axial Flow Compressor Design and CFD Analysis</a></h3>
+                  <div class="project__description">Designing an axial flow compressor in SolidWorks and evaluating its performance with a transient CFD analysis in ANSYS Fluent</div>
+                </div>
+              </div>
+            </article>
+          
+            <article class="project col col-4 col-d-6 col-t-12">
+              <div class="project__content">
+                <a href="/portfolio/heat-exchanger-analysis" class="project__image">
+                  
+                    <img class="lazy" data-src="/images/heatexchanger_front.png" alt="Heat Exchanger Design and CFD Analysis">
+                  
+                </a>
+                <div class="project__info">
+                  <div class="project__label">Spring 2018</div>
+                  <h3 class="project__title"><a class="project__link" href="/portfolio/heat-exchanger-analysis">Heat Exchanger Design and CFD Analysis</a></h3>
+                  <div class="project__description">Designing an automotive heat exchanger in SolidWorks and evaluating its performance with a steady-state CFD analysis in ANSYS Fluent</div>
+                </div>
+              </div>
+            </article>
+          
+            <article class="project col col-4 col-d-6 col-t-12">
+              <div class="project__content">
+                <a href="/portfolio/turducken-thermal-analysis" class="project__image">
+                  
+                    <img class="lazy" data-src="/images/turducken_mesh_iso.png" alt="Turducken Thermal Design and Analysis">
+                  
+                </a>
+                <div class="project__info">
+                  <div class="project__label">Fall 2017</div>
+                  <h3 class="project__title"><a class="project__link" href="/portfolio/turducken-thermal-analysis">Turducken Thermal Design and Analysis</a></h3>
+                  <div class="project__description">Designing a turducken cooking system in SolidWorks and evaluating its performance with a transient thermal analysis in ANSYS Workbench</div>
+                </div>
+              </div>
+            </article>
+          
+        </div>
+      </div>
     </div>
-  </section>
+  
+    
+    
 
-</div>
+    <div class="tags__inner is-hidden"
+         id="work"
+         data-tag="work">
+      <div class="container">
+        <div class="tag__info">
+          <h2 class="tag__title">
+            work <span class="tag__counter">1</span>
+          </h2>
+        </div>
+      </div>
 
+      <div class="container">
+        <div class="row">
+          
+            <article class="project col col-4 col-d-6 col-t-12">
+              <div class="project__content">
+                <a href="/portfolio/spandrel-analysis" class="project__image">
+                  
+                    <img class="lazy" data-src="/images/pankow_cover.png" alt="Thermal Performance of Spandrel Assemblies in Glazed Wall Systems">
+                  
+                </a>
+                <div class="project__info">
+                  <div class="project__label">Spring 2023</div>
+                  <h3 class="project__title"><a class="project__link" href="/portfolio/spandrel-analysis">Thermal Performance of Spandrel Assemblies in Glazed Wall Systems</a></h3>
+                  <div class="project__description">Outlining an accurate and repeatable procedure for assessing spandrel panel system thermal performance using steady-state FEA and CFD analyses</div>
+                </div>
+              </div>
+            </article>
+          
+        </div>
+      </div>
+    </div>
+  
+</section>
+
+<script>
+(function () {
+  function show(el) {
+    document.querySelectorAll('.tags__inner').forEach(function (n) {
+      n.classList.add('is-hidden');
+    });
+    el.classList.remove('is-hidden');
+    var dir = document.getElementById('tags-directory');
+    if (dir) dir.style.display = 'none';
+  }
+
+  // Prefer #hash; fallback to ?tag=
+  var idFromHash = location.hash.replace(/^#/, '');
+  if (idFromHash) {
+    var elHash = document.getElementById(idFromHash);
+    if (elHash) { show(elHash); return; }
+  }
+
+  var q = new URLSearchParams(location.search).get('tag');
+  if (!q) return; // leave directory visible if no tag selected
+
+  var lower = q.trim().toLowerCase();
+  var slug = lower
+    .normalize('NFKD').replace(/[\u0300-\u036f]/g, '') // strip accents
+    .replace(/[^a-z0-9]+/gi, '-').replace(/^-+|-+$/g, '');
+
+  var el = document.getElementById(slug) ||
+           document.querySelector('.tags__inner[data-tag="' + lower + '"]');
+
+  if (el) show(el);
+})();
+</script>
   </main>
   <!-- end content -->
 

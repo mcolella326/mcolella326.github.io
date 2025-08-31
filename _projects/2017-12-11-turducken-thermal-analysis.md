@@ -20,6 +20,7 @@ medias:
   #   url: '/videos/turducken_animation.mp4'
   #   media_type: 'video'
   #   subtitle: 'Turducken heating animation.'
+tags: [personal]
 ---
 # Background
 

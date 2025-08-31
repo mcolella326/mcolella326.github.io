@@ -8,6 +8,7 @@ featured: true
 timeline: Spring 2023
 tools: StarCCM+, SolidWorks, LabVIEW, thermocouples, environmental chambers
 medias:
+tags: [work]
 ---
 # Background
 

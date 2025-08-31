@@ -1,0 +1,103 @@
+---
+layout: default
+title: Tags
+permalink: /tags/
+---
+
+{%- comment -%} Build unique tag list from the projects collection {%- endcomment -%}
+{% assign all_tags = "" | split: "" %}
+{% for p in site.projects %}
+  {% if p.tags %}
+    {% assign all_tags = all_tags | concat: p.tags %}
+  {% endif %}
+{% endfor %}
+{% assign unique_tags = all_tags | uniq | sort_natural %}
+
+{%- comment -%} Sort all projects by date descending once {%- endcomment -%}
+{% assign projects_by_date = site.projects | sort: 'date' | reverse %}
+
+<section class="section tags">
+  <div class="container">
+    <p id="tags-directory">
+      {% for tag in unique_tags %}
+        <a class="post__tag"
+           href="{{ '/tags/' | relative_url }}?tag={{ tag | url_encode }}">
+          {{ tag }}
+        </a>
+        {% unless forloop.last %} · {% endunless %}
+      {% endfor %}
+    </p>
+  </div>
+
+  {%- comment -%} One section per tag (hidden by default) {%- endcomment -%}
+  {% for tag in unique_tags %}
+    {% assign tagged = projects_by_date | where_exp: "p", "p.tags and p.tags contains tag" %}
+    {% assign count = tagged | size %}
+
+    <div class="tags__inner is-hidden"
+         id="{{ tag | slugify }}"
+         data-tag="{{ tag | downcase }}">
+      <div class="container">
+        <div class="tag__info">
+          <h2 class="tag__title">
+            {{ tag }} <span class="tag__counter">{{ count }}</span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          {% for p in tagged %}
+            <article class="project col col-4 col-d-6 col-t-12">
+              <div class="project__content">
+                <a href="{{ p.url | relative_url }}" class="project__image">
+                  {% if p.image %}
+                    <img class="lazy" data-src="{{ p.image | relative_url }}" alt="{{ p.title }}">
+                  {% endif %}
+                </a>
+                <div class="project__info">
+                  {% if p.label %}<div class="project__label">{{ p.label }}</div>{% endif %}
+                  <h3 class="project__title"><a class="project__link" href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+                  {% if p.description %}<div class="project__description">{{ p.description }}</div>{% endif %}
+                </div>
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</section>
+
+<script>
+(function () {
+  function show(el) {
+    document.querySelectorAll('.tags__inner').forEach(function (n) {
+      n.classList.add('is-hidden');
+    });
+    el.classList.remove('is-hidden');
+    var dir = document.getElementById('tags-directory');
+    if (dir) dir.style.display = 'none';
+  }
+
+  // Prefer #hash; fallback to ?tag=
+  var idFromHash = location.hash.replace(/^#/, '');
+  if (idFromHash) {
+    var elHash = document.getElementById(idFromHash);
+    if (elHash) { show(elHash); return; }
+  }
+
+  var q = new URLSearchParams(location.search).get('tag');
+  if (!q) return; // leave directory visible if no tag selected
+
+  var lower = q.trim().toLowerCase();
+  var slug = lower
+    .normalize('NFKD').replace(/[\u0300-\u036f]/g, '') // strip accents
+    .replace(/[^a-z0-9]+/gi, '-').replace(/^-+|-+$/g, '');
+
+  var el = document.getElementById(slug) ||
+           document.querySelector('.tags__inner[data-tag="' + lower + '"]');
+
+  if (el) show(el);
+})();
+</script>
